@@ -121,7 +121,7 @@ export default function EventTimeline() {
 
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-700 to-red-600 px-4">
+                    <h2 className="font-bold mb-4 px-4">
                         Event Schedule
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
@@ -178,7 +178,7 @@ export default function EventTimeline() {
                         className="max-w-7xl mx-auto"
                     >
                         <div className="mb-10 text-center">
-                            <h3 className={`text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${activeDay.color} inline-block pb-2 border-b-2 border-gray-100`}>
+                            <h3 className="font-bold inline-block pb-2 border-b-2 border-gray-100">
                                 {activeDay.subtitle}
                             </h3>
                         </div>

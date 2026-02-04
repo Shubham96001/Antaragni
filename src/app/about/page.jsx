@@ -139,7 +139,7 @@ const teamSections = [
     members: [
       {
         name: "Prof. Rucha Jichkar",
-        role: "Asst.prof.,ETRX Dept., GhRCE",
+        role: "Asst.prof.,ETRX Dept.,GhRCE",
         image: ruchamam,
       },
     ],
@@ -296,7 +296,7 @@ export default function AboutPage() {
         transition={{ duration: 0.8 }}
         className="text-center mb-24"
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text   bg-gradient-to-r from-black-700 via-black-600 to-black-500 !text-black">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text   bg-gradient-to-r from-black-700 via-black-600 to-black-500 text-black">
           Antaragni 2026
         </h1>
         <p className="text-xl md:text-2xl text-gray-700 max-w-3xl   mx-auto leading-relaxed font-medium ">

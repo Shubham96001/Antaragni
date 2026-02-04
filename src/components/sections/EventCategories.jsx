@@ -47,8 +47,8 @@ export default function EventCategories() {
         <section className="py-32 bg-[var(--color-cream)] relative">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-4 text-black">
-                        Event <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-800">Categories</span>
+                    <h2 className="font-bold mb-4">
+                        Event Categories
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                         Dive into the world of culture, technology, and sports.
@@ -95,7 +95,7 @@ export default function EventCategories() {
                                         >
                                             {cat.count}
                                         </span>
-                                        <h3 className="text-3xl md:text-4xl font-black text-[var(--color-primary)] italic tracking-tighter mb-2">
+                                        <h3 className="font-black italic tracking-tighter mb-2">
                                             {cat.name}
                                         </h3>
                                         <p className="text-xl font-bold text-gray-700 mb-2">
