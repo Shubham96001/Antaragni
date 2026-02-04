@@ -139,7 +139,7 @@ const teamSections = [
     members: [
       {
         name: "Prof. Rucha Jichkar",
-        role: "Treasurer, GHRCE",
+        role: "Asst.prof.,ETRX Dept., GhRCE",
         image: ruchamam,
       },
     ],
@@ -296,10 +296,10 @@ export default function AboutPage() {
         transition={{ duration: 0.8 }}
         className="text-center mb-24"
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-pink-600 to-orange-500">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text   bg-gradient-to-r from-black-700 via-black-600 to-black-500 !text-black">
           Antaragni 2026
         </h1>
-        <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="text-xl md:text-2xl text-gray-700 max-w-3xl   mx-auto leading-relaxed font-medium ">
           Antaragni is not just a festival, it's a legacy a spectrum of emotions,
           talent, and culture colliding to create magic.
         </p>
@@ -314,8 +314,8 @@ export default function AboutPage() {
         className="mb-32"
       >
         {/* ghrce Section */}
-        <div className="backdrop-blur-md rounded-3xl p-8 md:p-12 border border-purple-200 bg-purple-50/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-shadow duration-300">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="backdrop-blur-md rounded-3xl p-8 md:p-12 border border-purple-200 bg-purple-50/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-shadow duration-300 hover:scale-102 transform">
+          <div className="flex flex-col md:flex-row items-center gap-12 ">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[var(--color-primary)]">About GHRCE</h2>
               <p className="text-gray-700 text-lg leading-relaxed align-justify font-medium">
@@ -331,7 +331,7 @@ export default function AboutPage() {
         </div>
 
         {/* Antaragni  Section */}
-        <div className="backdrop-blur-md mt-10 rounded-3xl p-8 md:p-12 border border-purple-200 bg-purple-50/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-shadow duration-300">
+        <div className="backdrop-blur-md mt-10 rounded-3xl p-8 md:p-12 border border-purple-200 bg-purple-50/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-shadow duration-300 hover:scale-102 transform">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[var(--color-primary)]">About Antaragni</h2>
@@ -362,28 +362,28 @@ export default function AboutPage() {
                 {section.members.map((member) => (
                   <div
                     key={member.name}
-                    className="flex flex-col items-center justify-start p-4 text-center hover:scale-105 transition-all duration-300 max-w-xs w-full relative group"
+                    className="flex flex-col items-center justify-start p-4 text-center  transition-all duration-300 max-w-xs w-full relative group"
                   >
                     {/* Image Container with Gradient */}
                     <div className="relative mb-6 flex justify-center items-center">
                       {/* Glowing Gradient Background */}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-pink-600 via-purple-600 to-cyan-500 rounded-full blur-2xl opacity-20 group-hover:opacity-60 group-hover:blur-3xl transition-all duration-500 scale-125"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-pink-400 via-purple-600 to-cyan-500 rounded-full blur-2xl opacity-20  transition-all duration-500 scale-125"></div>
 
                       {/* Image Circle */}
                       <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl z-10 bg-gray-100">
                         <img
                           src={member.image?.src || member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover object-center  transition-transform duration-700"
                         />
                       </div>
                     </div>
 
                     <div className="z-10 w-full">
-                      <h4 className="font-bold text-xl mb-1 text-black transition-all duration-300 group-hover:text-[var(--color-primary)]">
+                      <h4 className="font-bold text-xl mb-1 text-black transition-all duration-300">
                         {member.name}
                       </h4>
-                      <p className="text-sm font-bold text-gray-500 group-hover:text-gray-700 tracking-wide uppercase transition-colors">
+                      <p className="text-sm font-bold text-gray-500 tracking-wide uppercase transition-colors">
                         {member.role}
                       </p>
                     </div>
