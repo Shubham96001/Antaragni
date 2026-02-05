@@ -68,7 +68,7 @@ export default function Navbar() {
                         ))}
 
                         <Link href="https://ghrce.raisoni.net/" target="_blank" rel="noopener noreferrer">
-                            <div className="relative h-24 w-36 lg:h-24 lg:w-36 ml-4">
+                            <div className="relative h-24 w-36 lg:h-30 lg:w-40 ml-10">
                                 <Image
                                     src="/ghrce-logo-white.jpg"
                                     alt="GHRCE College Logo"
