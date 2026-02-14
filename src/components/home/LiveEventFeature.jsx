@@ -26,7 +26,7 @@ export default function LiveEventFeature() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                 </span>
-                <h2 className="text-xl font-bold tracking-wider text-[var(--color-primary)] uppercase">Live Event</h2>
+                <h2 className="font-bold tracking-wider uppercase">Live Event</h2>
             </div>
 
             <motion.div
@@ -52,7 +52,7 @@ export default function LiveEventFeature() {
 
                 {/* Content Section */}
                 <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-[var(--color-cream)]">
-                    <h3 className="text-3xl md:text-5xl font-bold mb-2 text-[var(--color-primary)] leading-tight">
+                    <h3 className="font-bold mb-2 leading-tight">
                         {LIVE_EVENT.title}
                     </h3>
                     <p className="text-xl text-[var(--color-primary-light)] font-medium mb-4">

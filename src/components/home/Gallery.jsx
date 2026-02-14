@@ -141,7 +141,7 @@ const BentoGallery = () => {
                             className="object-cover w-full h-full bg-white"
                         />
                     </div>
-                    <h1 className="text-3xl md:text-6xl font-bold tracking-tight mb-2 text-black">
+                    <h1 className="font-bold tracking-tight mb-2">
                         Antaragni
                     </h1>
                     <p className="text-gray-600 max-w-md text-sm md:text-base leading-relaxed mb-8">
