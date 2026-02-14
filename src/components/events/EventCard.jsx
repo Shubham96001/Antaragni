@@ -13,9 +13,8 @@ export default function EventCard({ event }) {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
-            className="group relative h-[400px] w-full rounded-xl overflow-hidden glass-panel border border-purple-900/10 hover:border-purple-600/30 shadow-lg"
+            className="group relative h-[400px] w-full rounded-xl overflow-hidden glass-panel text-white border border-purple-900/10 shadow-lg"
         >
             <Link href={`/events/${event.category}/${event.slug}`} className="block h-full w-full relative">
                 {/* Background Image using Next.js Image */}
