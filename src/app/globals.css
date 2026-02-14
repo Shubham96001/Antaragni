@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-poppins);
+
+  /* --- Antaragni 2026 Brand Palette --- */
+
+  /* Primary Identity */
+  --color-primary: #3C007A;
+  /* Deep Purple - Main Brand Color */
+  --color-primary-light: #6F2C91;
+  /* Lighter Purple - Hover/Highlights */
+  --color-primary-dark: #2a0055;
+  /* Darker Purple - Backgrounds/Text */
+
+  /* Accents */
+  --color-accent: #f97316;
+  /* Bright Orange - Call to Actions */
+  --color-accent-hover: #eb681e;
+  /* Deep Orange - Hover States */
+  --color-magenta: #9B2F8F;
+  /* Magenta - Creative Accents */
+  --color-cyan: #06b6d4;
+  /* Cyan - Tech Accents */
+
+  /* Neutrals */
+  --color-cream: #f8fafc;
+  /* Off-white/Slate-50 */
+  --color-surface: #f3f4f6;
+  /* Light Gray Surface */
+  --color-border: #e2e8f0;
+  /* Borders */
+
+  /* Text Colors */
+  --color-text-main: #1e293b;
+  /* Slate-800 - Body Text */
+  --color-text-muted: #64748b;
+  /* Slate-500 - Secondary Text */
+  --color-text-inverted: #ffffff;
+  /* White - Text on Dark Backgrounds */
+
+  /* Specific Component Overrides */
+  --color-footer-bg: #0f0518;
+  /* Dark Footer Background */
+
+  /* Tailwind Mappings */
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
+
+  /* Event Theme Colors */
+  --antaragni-primary: #9B2F8F;
+  /* Magenta */
+  --antaragni-secondary: #f97316;
+  /* Orange */
+
+  --technorion-primary: #0ea5e9;
+  /* Sky Blue */
+  --technorion-secondary: #06b6d4;
+  /* Cyan */
+
+  --parakram-primary: #ef4444;
+  /* Red */
+  --parakram-secondary: #f97316;
+  /* Orange */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Glassmorphism Utilities - Light Mode */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(60, 0, 122, 0.1);
+  /* Primary color border low opacity */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(60, 0, 122, 0.1);
+  box-shadow: 0 8px 32px rgba(60, 0, 122, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(60, 0, 122, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(60, 0, 122, 0.15);
+}
+
+/* Text Glow Support - Updated for Light Mode readability */
+.text-glow {
+  text-shadow: 0 0 10px rgba(60, 0, 122, 0.1);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Custom Scrollbar - Purple Theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 5px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
