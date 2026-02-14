@@ -2,111 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import parakramEvents from "@/data/events/parakram.json";
-import antaragniEvents from "@/data/events/antaragni.json";
-import technorionEvents from "@/data/events/technorion.json";
-
-// Helper to normalize strings for comparison
-const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
-
-// --- Data Preparation ---
-// We'll create a mapping of event names to their details for easy lookup.
-const allEventsData = [...parakramEvents, ...antaragniEvents, ...technorionEvents];
-
-const getEventDetails = (eventName) => {
-    // Try to find exact match or partial match
-    const normalizedName = normalize(eventName);
-    const event = allEventsData.find(e => normalize(e.name).includes(normalizedName) || normalizedName.includes(normalize(e.name)));
-    return event || {};
-};
-
-// --- Schedule Configuration ---
-const schedule = {
-    parakram: [
-        {
-            day: "Day 1",
-            date: "Feb 15",
-            subtitle: "Inauguration & Indoor Sports",
-            events: ["Inauguration", "Table Tennis", "Pool (8-Ball)", "Carrom", "Chess", "Power Lifting"],
-            color: "from-[var(--parakram-primary)] to-[var(--parakram-secondary)]"
-        },
-        {
-            day: "Day 2",
-            date: "Feb 16",
-            subtitle: "Cricket & Volleyball",
-            events: ["Futsal (Women Only)", "Cricket", "Volleyball"],
-            color: "from-[var(--parakram-secondary)] to-[var(--parakram-primary)]"
-        },
-        {
-            day: "Day 3",
-            date: "Feb 17",
-            subtitle: "Team Sports",
-            events: ["Tug of War", "Dodge Ball", "Football"],
-            color: "from-[var(--parakram-primary)] to-[var(--parakram-tertiary)]" // Note: tertiary not defined for parakram in globals, fallback or define
-        },
-        {
-            day: "Day 4",
-            date: "Feb 18",
-            subtitle: "Athletics & Court Games",
-            events: ["Athletics", "Badminton", "Basketball", "Handball", "Kabaddi"],
-            color: "from-[var(--parakram-secondary)] to-[var(--parakram-primary)]"
-        }
-    ],
-    antaragni: [
-        {
-            day: "Day 1",
-            date: "Feb 19",
-            subtitle: "Traditional & Tech Day 1",
-            events: [
-                "Battle of Tradition",
-                "Face Painting",
-                "Poster Making",
-                "Treasure Hunt",
-                "Open Mic",
-                "Street Dance",
-                "Micro Code",
-                "Tech Quiz",
-                "BGMI",
-                "Code-O-Quick",
-                "Feeling Se Reeling"
-            ],
-            color: "from-[var(--antaragni-primary)] to-[var(--color-primary)]"
-        },
-        {
-            day: "Day 2",
-            date: "Feb 20",
-            subtitle: "Theme & Tech Day 2",
-            events: [
-                "Talent Hunt",
-                "Singing (Solo/Duet)",
-                "Theme Dance / Folk Dance",
-                "Box Cricket",
-                "Mobile Pool",
-                "Logo Design",
-                "Line Follower",
-                "Valorant",
-                "Tech Showcase",
-                "Ludo King",
-                "Strategic Trade",
-                "Clash Royale"
-            ],
-            color: "from-[var(--antaragni-secondary)] to-[var(--antaragni-primary)]"
-        },
-        {
-            day: "Day 3",
-            date: "Feb 21",
-            subtitle: "Retro & Tech Day 3",
-            events: [
-                "Fashion Show",
-                "Wall Painting",
-                "Global Street Master Chef",
-                "UNO",
-                "Tower Making"
-            ],
-            color: "from-[var(--technorion-primary)] to-[var(--technorion-secondary)]"
-        }
-    ]
-};
+import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaTrophy } from "react-icons/fa";
+import Link from "next/link";
+import { schedule } from "@/data/schedule";
+import { getEventDetails } from "@/utils/eventHelpers";
 
 export default function EventTimeline() {
     const [activeMainTab, setActiveMainTab] = useState("parakram");
@@ -134,8 +33,8 @@ export default function EventTimeline() {
                     <button
                         onClick={() => { setActiveMainTab("parakram"); setActiveDayIndex(0); }}
                         className={`w-full sm:w-auto px-6 py-3 md:px-8 rounded-full text-lg md:text-xl font-bold transition-all transform hover:scale-105 active:scale-95 ${activeMainTab === "parakram"
-                            ? "bg-gradient-to-r from-red-600 to-orange-600 text-white shadow-lg shadow-red-500/30"
-                            : "bg-white text-gray-500 hover:text-red-500 border border-gray-200"
+                            ? "bg-gradient-to-r from-fuchsia-800 to-purple-800 text-white shadow-lg shadow-purple-500/30"
+                            : "bg-white text-gray-500 hover:text-purple-500 border border-gray-200"
                             }`}
                     >
                         Parakram
@@ -143,8 +42,8 @@ export default function EventTimeline() {
                     <button
                         onClick={() => { setActiveMainTab("antaragni"); setActiveDayIndex(0); }}
                         className={`w-full sm:w-auto px-6 py-3 md:px-8 rounded-full text-lg md:text-xl font-bold transition-all transform hover:scale-105 active:scale-95 ${activeMainTab === "antaragni"
-                            ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-blue-500/30"
-                            : "bg-white text-gray-500 hover:text-blue-500 border border-gray-200"
+                            ? "bg-gradient-to-r from-purple-800 to-fuchsia-800 text-white shadow-lg shadow-purple-500/30"
+                            : "bg-white text-gray-500 hover:text-purple-500 border border-gray-200"
                             }`}
                     >
                         Antaragni & Technorion

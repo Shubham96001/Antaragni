@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import parakram from "../../assets/parakram.jpeg";
-import antaragni from "../../assets/ant1.jpeg";
-import technorion from "../../assets/tech.png";
+
 
 const categories = [
     {
@@ -13,9 +11,9 @@ const categories = [
         subtitle: "Sports Events",
         count: "16 Events",
         description: "Athletics, Team Sports & E-Sports",
-        color: "var(--parakram-tertiary)",
-        gradient: "from-[var(--parakram-primary)] to-[var(--parakram-tertiary)]",
-        image: parakram,
+        color: "white",
+        gradient: "white",
+        image: "/events/parakram.jpeg",
     },
     {
         id: "technorion",
@@ -23,9 +21,9 @@ const categories = [
         subtitle: "Technical Events",
         count: "19 Events",
         description: "Coding, Robotics, Gaming & Innovation",
-        color: "var(--technorion-primary)",
-        gradient: "from-[var(--technorion-primary)] to-[var(--technorion-tertiary)]",
-        image: technorion,
+        color: "white",
+        gradient: "white",
+        image: "/events/hackathon.jpg",
     },
 
     {
@@ -34,11 +32,9 @@ const categories = [
         subtitle: "Cultural Events",
         count: "14 Events",
         description: "Dance, Music, Drama & Art",
-        color: "var(--antaragni-primary)",
-        gradient: "from-[var(--antaragni-primary)] to-[var(--antaragni-secondary)]",
-        // Using placeholder images from Unsplash
-        image: antaragni,
-        video: "/videos/collegebackground video.mp4"
+        color: "white",
+        gradient: "white",
+        image: "/events/theme-dance.jpeg",
     }
 ];
 
@@ -48,7 +44,7 @@ export default function EventCategories() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="font-bold mb-4">
-                        Event Categories
+                        Event Category
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                         Dive into the world of culture, technology, and sports.
@@ -82,33 +78,32 @@ export default function EventCategories() {
                                     />
                                 )}
 
-                                {/* Gradient Overlay */}
-                                <div className={`absolute inset-0 bg-gradient-to-t ${cat.gradient} opacity-40 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-80`} />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/20 transition-colors duration-300" />
+                                {/* Gradient Overlay - Static Contrast */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity duration-300" />
 
                                 {/* Content */}
                                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
-                                    <div className="transform transition-transform duration-300 group-hover:-translate-y-4">
+                                    <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
                                         <span
                                             className="inline-block px-3 py-1 rounded-full text-xs font-bold text-black mb-4"
                                             style={{ backgroundColor: cat.color }}
                                         >
                                             {cat.count}
                                         </span>
-                                        <h3 className="font-black italic tracking-tighter mb-2">
+                                        <h3 className="font-black italic tracking-tighter mb-2 !text-white">
                                             {cat.name}
                                         </h3>
-                                        <p className="text-xl font-bold text-gray-700 mb-2">
+                                        <p className="text-xl font-bold text-white mb-2">
                                             {cat.subtitle}
                                         </p>
-                                        <p className="text-gray-800 text-sm max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 font-medium">
+                                        <p className="text-white text-sm max-w-xs font-medium leading-relaxed">
                                             {cat.description}
                                         </p>
                                     </div>
 
                                     {/* Arrow Icon */}
-                                    <div className="absolute bottom-8 right-8 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100 border border-white/10">
+                                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                         </svg>
                                     </div>
