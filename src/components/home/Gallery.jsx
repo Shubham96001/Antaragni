@@ -103,7 +103,6 @@ const BentoGallery = () => {
                     </div> */}
                     <h1 className="font-bold tracking-tight mb-2">
                         Antaragni 2025
-                        Antaragni 2026
                     </h1>
                     <p className="text-gray-600 max-w-md text-sm md:text-base leading-relaxed mb-8">
                         The biggest Cultural Festival of GHRCE Nagpur <br />
