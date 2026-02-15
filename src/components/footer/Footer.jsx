@@ -80,7 +80,7 @@ export default function Footer() {
                     <div>
                         <h4 className=" event-title text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Festival</h4>
                         <ul className="space-y-2">
-                            {['Events', 'Schedule', 'Gallery', 'Sponsors'].map((item) => (
+                            {['Events', 'Gallery', 'Sponsors'].map((item) => (
                                 <li key={item}>
                                     <Link href={`/${item.toLowerCase()}`} className="hover:text-[var(--color-accent)] transition-colors flex items-center gap-2 group">
                                         <span className="w-1 h-1 rounded-full bg-[var(--color-text-muted)] group-hover:bg-[var(--color-accent)] transition-colors"></span>
@@ -95,7 +95,7 @@ export default function Footer() {
                     <div>
                         <h4 className="event-title text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Info</h4>
                         <ul className="space-y-2">
-                            {['About Us', 'Contact', 'UDAN', 'Team'].map((item) => (
+                            {['About', 'Contact', 'UDAN'].map((item) => (
                                 <li key={item}>
                                     <Link
                                         href={item === 'Team' ? '/about#team' : `/${item.toLowerCase().replace(' ', '')}`}
