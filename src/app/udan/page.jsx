@@ -3,7 +3,10 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaBookOpen } from "react-icons/fa";
 
+import { useState } from "react";
+
 export default function UdanPage() {
+    const [showPdf, setShowPdf] = useState(false);
     return (
         <div className="min-h-screen w-full pt-20 pb-10 px-4 md:px-8 max-w-7xl mx-auto text-black bg-white">
             <div className="flex flex-col md:flex-row items-center gap-12 mt-10">
@@ -54,27 +57,37 @@ export default function UdanPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg">
+                        <button
+                            onClick={() => setShowPdf(!showPdf)}
+                            className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg"
+                        >
                             <FaBookOpen />
-                            Read Online
+                            {showPdf ? "Close Reader" : "Read Online"}
                         </button>
-                        <button className="flex items-center justify-center gap-3 bg-gray-800 text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors shadow-lg">
+                        <a
+                            href="/events/UDAN2025-DxvGWi_G.pdf"
+                            download="UDAN_Magazine_2026.pdf"
+                            className="flex items-center justify-center gap-3 bg-gray-800 text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors shadow-lg"
+                        >
                             <FaDownload />
                             Download PDF
-                        </button>
+                        </a>
                     </div>
-                    {/* 
-                    {/* Previous Editions 
-                    <div className="pt-8 border-t border-gray-200">
-                        <h3 className="text-lg font-semibold text-gray-500 mb-4">Previous Editions</h3>
-                        <div className="flex gap-4">
-                            {['2025', '2024', '2023'].map(year => (
-                                <span key={year} className="px-4 py-2 bg-gray-100 rounded-lg border border-gray-300 text-sm hover:border-blue-500/50 cursor-pointer transition-colors text-gray-700">
-                                    Edition {year}
-                                </span>
-                            ))}
-                        </div>
-                    </div> */}
+
+                    {/* PDF Viewer */}
+                    {showPdf && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="mt-8 w-full h-[600px] border-2 border-gray-200 rounded-xl overflow-hidden shadow-2xl"
+                        >
+                            <iframe
+                                src="/events/UDAN2025-DxvGWi_G.pdf"
+                                className="w-full h-full"
+                                title="UDAN Magazine Viewer"
+                            ></iframe>
+                        </motion.div>
+                    )}
                 </motion.div>
 
             </div>

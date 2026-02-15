@@ -3,6 +3,10 @@
 import { motion } from "framer-motion";
 
 const sponsors = {
+    // INSTRUCTIONS:
+    // 1. Add your sponsor images to the 'public/sponsors/' folder.
+    // 2. Update the 'src' paths below to match your filenames (e.g., "/sponsors/my-sponsor.png").
+
     title: [
         { name: "TechGiant", type: "Title Sponsor", src: "https://picsum.photos/seed/techgiant/400/200" },
     ],

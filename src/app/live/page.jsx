@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 
 export default function LivePage() {
+    // REPLACE THIS WITH ACTUAL LIVE STREAM ID
+    const YOUTUBE_VIDEO_ID = "ZjNzLjInhIk";
+
     const handleShare = () => {
         if (navigator.share) {
             navigator.share({
@@ -30,11 +33,8 @@ export default function LivePage() {
                             <span className="text-red-500 font-bold tracking-widest uppercase text-sm">Live Now</span>
                         </div>
                         <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-purple-600">
-                            GHRCEN Auditorium Cam
+                            Live Streaming.....
                         </h1>
-                        <p className="text-gray-400 text-sm mt-1">
-                            Broadcasting Main Stage Events • <span className="text-white font-semibold">Opening Ceremony</span>
-                        </p>
                     </div>
                     <button
                         onClick={handleShare}
@@ -57,7 +57,7 @@ export default function LivePage() {
                         {/* Stream Embed */}
                         <iframe
                             className="w-full h-full"
-                            src="https://www.youtube.com/embed/ZjNzLjInhIk?autoplay=1&mute=1"
+                            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1`}
                             title="Live Stream"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -66,8 +66,22 @@ export default function LivePage() {
 
                         {/* Minimal Overlay */}
                         <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p className="text-white/80 text-sm font-medium">Live from GHRCEN Main Ground</p>
+                            <p className="text-white/80 text-sm font-medium">Live from GHRCE Nagpur</p>
                         </div>
+                    </div>
+
+                    <div className="flex justify-center">
+                        <a
+                            href="https://www.youtube.com/@GHRCE_Nagpur"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-[#FF0000] hover:bg-[#CC0000] text-white px-8 py-3 rounded-full font-bold transition-all flex items-center gap-3 shadow-lg hover:shadow-red-900/20"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                            Visit Official GHRCE Channel
+                        </a>
                     </div>
                 </div>
             </div>
