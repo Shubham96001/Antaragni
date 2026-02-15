@@ -108,9 +108,9 @@ export default function PrismHero() {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-[15vw] leading-none font-black mb-4 tracking-tighter"
+                                className="text-[18vw] leading-none font-black mb-4 tracking-tighter"
                             >
-                                <span className="bg-clip-text text-transparent bg-linear-to-r from-[#ff0080] via-[#7928ca] to-[#ff0080] animate-gradient-x">
+                                <span className="text-[#3C007A]">
                                     ANTARAGNI
                                 </span>
                             </motion.h1>

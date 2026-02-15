@@ -31,7 +31,7 @@ export default function Navbar() {
     ];
 
     return (
-        <header className="w-full bg-white/90 backdrop-blur-md shadow-sm">
+        <header className="w-full bg-white shadow-sm">
 
             <div className="w-full container mx-auto px-4 md:px-15">
                 <div className="flex items-center justify-between h-20 w-full">
