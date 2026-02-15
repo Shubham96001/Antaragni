@@ -4,9 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaHistory, FaUsers, FaLightbulb } from "react-icons/fa";
 
-
-
-
 import sunilji from "../../assets/suniljiraisoni-Bl6duqdx.png";
 import shobharaisoni from "../../assets/shobharaisoni2-CQnZ9QrQ.png";
 import director from "../../assets/director-DX4IHFhE.png";
@@ -41,11 +38,7 @@ import umakantKadu from "../../assets/decorationLead.jpeg";
 import discipline from "../../assets/disciplineLead.jpeg";
 import shreyashraisoni from "../../assets/shreyasraisoni2.png"
 import ruchamam from "../../assets/ruchamam.jpeg"
-
 import sharaddhaumate from "../../assets/sharaddhaumate.jpeg"
-
-
-
 
 
 const teamSections = [
@@ -53,12 +46,12 @@ const teamSections = [
     title: "PATRONS",
     members: [
       {
-        name: "Dr. Sunilji Raisoni",
+        name: "Shri. Sunilji Raisoni",
         role: "Chairman, RGI",
         image: sunilji,
       },
       {
-        name: "Mrs. Shobha Raisoni",
+        name: "Smt. Shobha Raisoni",
         role: "Trustee, RGI",
         image: shobharaisoni,
       },
@@ -139,7 +132,7 @@ const teamSections = [
     members: [
       {
         name: "Prof. Rucha Jichkar",
-        role: "Asst.prof.,ETRX Dept.,GhRCE",
+        role: "Asst. Prof, ETRX Dept.",
         image: ruchamam,
       },
     ],
@@ -163,21 +156,6 @@ const teamSections = [
         image: jointGathering1,
       },
       {
-        name: "Sanika Guru",
-        role: "Gymkhana President",
-        image: gymkhanaPresident,
-      },
-      {
-        name: "Shreyash Shriwas",
-        role: "Joint Gymkhana President",
-        image: gymkhanaJointPresident,
-      },
-      {
-        name: "Tanmay Khode",
-        role: "Joint Gymkhana President",
-        image: gymkhanaJointPresident1,
-      },
-      {
         name: "Soham Kale",
         role: "Technorion President",
         image: technorionPresident,
@@ -191,6 +169,21 @@ const teamSections = [
         name: "Suyog Aware",
         role: "Joint Technorion President",
         image: jointTechnorion1,
+      },
+      {
+        name: "Sanika Guru",
+        role: "Gymkhana President",
+        image: gymkhanaPresident,
+      },
+      {
+        name: "Shreyash Shriwas",
+        role: "Joint Gymkhana President",
+        image: gymkhanaJointPresident,
+      },
+      {
+        name: "Tanmay Khode",
+        role: "Joint Gymkhana President",
+        image: gymkhanaJointPresident1,
       },
       {
         name: "Umakant  Kadu",
