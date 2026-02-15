@@ -50,7 +50,7 @@ function CountdownTimer({ targetDate }) {
 
 
     return (
-        <div className="flex justify-center items-center mt-10">
+        <div className="flex justify-center items-center mt-6">
             <TimeUnit value={timeLeft.days} label="Days" />
             <TimeUnit value={timeLeft.hours} label="Hours" />
             <TimeUnit value={timeLeft.minutes} label="Minutes" />
@@ -97,29 +97,29 @@ export default function PrismHero() {
             {/* Overlay Content */}
             <>
                 <div className="absolute inset-0 z-30 flex items-center justify-center overflow-hidden">
-                    <div className="relative h-auto mt-25 flex flex-col items-center justify-center text-center px-4 pointer-events-none w-full">
+                    <div className="relative h-auto flex flex-col items-center justify-center text-center px-4 pointer-events-none w-full">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
                             className="p-8 md:p-4 pointer-events-auto max-w-full w-full mx-auto"
                         >
-                            <motion.h1
+                            <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-[18vw] leading-none font-black mb-4 tracking-tighter"
+                                className="text-[13vw] md:text-[9vw] leading-none font-black mb-2 tracking-tighter "
                             >
                                 <span className="text-[#3C007A]">
                                     ANTARAGNI
                                 </span>
-                            </motion.h1>
+                            </motion.div>
 
                             <motion.h2
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.8 }}
-                                className="text-2xl md:text-4xl font-extrabold text-[var(--color-primary)] tracking-[0.3em] uppercase mb-8 drop-shadow-sm"
+                                className="text-2xl md:text-4xl font-extrabold text-[var(--color-primary)] tracking-[0.3em] uppercase mb-6 drop-shadow-sm"
                             >
                                 Spectrum Saga
                             </motion.h2>
@@ -128,7 +128,7 @@ export default function PrismHero() {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.8 }}
-                                className="text-purple-950 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-bold leading-relaxed"
+                                className="text-purple-950 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-bold leading-relaxed"
                             >
                                 Immerse yourself in the prism of possibilities. <br />
                                 Where every color tells a story of courage and creativity.
