@@ -16,7 +16,7 @@ export default function UdanPage() {
                     className="w-full md:w-1/2 flex justify-center"
                 >
                     <div className="relative w-[300px] h-[420px] md:w-[400px] md:h-[560px] group perspective-1000">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-r-2xl rounded-l-md blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-r-2xl rounded-l-md blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                         <div className="relative w-full h-full bg-gray-900 border-l-4 border-white/20 rounded-r-2xl rounded-l-sm shadow-2xl overflow-hidden transform transition-transform duration-500 group-hover:rotate-y-[-10deg] group-hover:scale-105 origin-left">
                             {/* Cover Image Placeholder */}
                             <img
@@ -46,7 +46,7 @@ export default function UdanPage() {
                 >
                     <h2 className="text-4xl md:text-5xl font-bold leading-tight">
                         Chronicles of <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Creativity & Innovation</span>
+                        <span className="text-[#8a4bcd]">Creativity</span> & <span className="text-[#5A189A]">Innovation</span>
                     </h2>
 
                     <p className="text-gray-700 text-lg leading-relaxed">
@@ -54,7 +54,7 @@ export default function UdanPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button className="flex items-center justify-center gap-3 bg-gray-400 text-white px-8 py-4 rounded-full font-bold hover:bg-gray-500 transition-colors shadow-lg">
+                        <button className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg">
                             <FaBookOpen />
                             Read Online
                         </button>

@@ -7,7 +7,7 @@ export default function EventGrid({ events, title }) {
         <section className="py-12">
             <div className="container mx-auto px-4">
                 {title && (
-                    <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-primary)] mb-10 tracking-tight">
+                    <h2 className="font-bold mb-10 tracking-tight">
                         {title}
                     </h2>
                 )}

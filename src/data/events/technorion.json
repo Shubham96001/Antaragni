@@ -51,7 +51,7 @@
         "category": "technorion",
         "shortDescription": "Technology and innovation trivia championship",
         "description": "A fast-paced technology quiz competition testing participants' knowledge of innovation, computers, and emerging tech through multiple engaging quiz rounds.",
-        "bannerImage": "/events/techquiz-Duxe7jXn.jpg",
+        "bannerImage": "/events/techquiz.jpg",
         "details": {
             "date": "19 Feb, 2026",
             "time": "12:30 PM - 1:30 PM",
@@ -278,7 +278,7 @@
         "category": "technorion",
         "shortDescription": "Engineering challenge to build tallest/strongest structure",
         "description": "An engineering challenge where teams design and construct the tallest and strongest possible tower using limited materials and structural creativity.",
-        "bannerImage": "/events/tech.png",
+        "bannerImage": "/events/tower-making.jpg",
         "details": {
             "date": "21 Feb, 2026",
             "time": "12:30 PM - 2:30 PM",
@@ -466,7 +466,7 @@
         "category": "technorion",
         "shortDescription": "Stock market simulation and trading game",
         "description": "A stock market simulation game where participants trade virtual capital, analyze market trends, and build the most profitable portfolio.",
-        "bannerImage": "/events/tech.png",
+        "bannerImage": "/events/strategic-trade.jpg",
         "details": {
             "date": "20 Feb, 2026",
             "time": "9:30 AM - 11:30 AM",

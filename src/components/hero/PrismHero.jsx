@@ -1,20 +1,16 @@
 "use client";
 
-import { useRef, Suspense, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
 
-
-import {
-    OrbitControls,
-    PerspectiveCamera,
-    Sparkles,
-    Float,
-    MeshTransmissionMaterial,
-    Stars,
-    Center
-} from "@react-three/drei";
-import * as THREE from 'three';
+const heroImages = [
+    "/events/DSC_3150.jpg",
+    "/events/ant3-FugJqVfC.JPG",
+    "/events/ant8-B2bLfqP2.JPG",
+    "/events/_DSC6997-fI_ZGXh3.JPG",
+    "/events/jantaRaja2.jpg",
+    "/events/fashionshow.jpg"
+];
 
 // --- Sub-Component: The Styled Countdown Timer ---
 function CountdownTimer({ targetDate }) {
@@ -54,7 +50,7 @@ function CountdownTimer({ targetDate }) {
 
 
     return (
-        <div className="flex justify-center items-center mt-10">
+        <div className="flex justify-center items-center mt-6">
             <TimeUnit value={timeLeft.days} label="Days" />
             <TimeUnit value={timeLeft.hours} label="Hours" />
             <TimeUnit value={timeLeft.minutes} label="Minutes" />
@@ -63,177 +59,85 @@ function CountdownTimer({ targetDate }) {
     );
 }
 
-// --- Original 3D Components (Unchanged) ---
-function FloatingShards() {
-    return (
-        <group>
-            {[...Array(10)].map((_, i) => (
-                <Float
-                    key={i}
-                    speed={1.5}
-                    rotationIntensity={2}
-                    floatIntensity={2}
-                    position={[
-                        (Math.random() - 0.5) * 10,
-                        (Math.random() - 0.5) * 10,
-                        (Math.random() - 0.5) * 6
-                    ]}
-                >
-                    <mesh scale={Math.random() * 0.3 + 0.1}>
-                        <octahedronGeometry args={[1, 0]} />
-                        <meshStandardMaterial
-                            color={i % 2 === 0 ? "#ff0080" : "#00ffff"}
-                            emissive={i % 2 === 0 ? "#ff0080" : "#00ffff"}
-                            emissiveIntensity={2}
-                            toneMapped={false}
-                        />
-                    </mesh>
-                </Float>
-            ))}
-        </group>
-    );
-}
 
-// Enhanced CompositePrism with click handler
-function CompositePrism({ onPrismClick }) {
-    const meshRef = useRef();
-    const innerRef = useRef();
-    const { camera, size } = useThree();
-
-    useFrame((state, delta) => {
-        meshRef.current.rotation.y += delta * 0.2;
-        meshRef.current.rotation.z += delta * 0.1;
-        innerRef.current.rotation.y -= delta * 0.4;
-        innerRef.current.rotation.x -= delta * 0.2;
-    });
-
-    const handleClick = (e) => {
-        e.stopPropagation();
-        if (onPrismClick) {
-            onPrismClick();
-        }
-    };
-
-    return (
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-            <group onClick={handleClick}>
-                <mesh ref={meshRef} scale={2}>
-                    <icosahedronGeometry args={[1, 0]} />
-                    <MeshTransmissionMaterial
-                        backside
-                        samples={16}
-                        resolution={1024}
-                        thickness={2.5}
-                        roughness={0}
-                        anisotropy={1}
-                        chromaticAberration={1.5}
-                        color="#ffffff"
-                        distortion={0.5}
-                        distortionScale={0.5}
-                        temporalDistortion={0.2}
-                    />
-                </mesh>
-                <mesh ref={innerRef} scale={1.2}>
-                    <octahedronGeometry args={[1, 0]} />
-                    <meshBasicMaterial
-                        color={[3, 1, 3]}
-                        wireframe
-                        toneMapped={false}
-                    />
-                </mesh>
-            </group>
-        </Float>
-    );
-}
-
-function Scene({ onPrismClick }) {
-    return (
-        <>
-            <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={50} />
-            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-            <ambientLight intensity={1.5} />
-            <pointLight position={[10, 10, 10]} intensity={4} color="#ff00ff" />
-            <pointLight position={[-10, 10, -10]} intensity={4} color="#00ffff" />
-            <pointLight position={[0, -10, 0]} intensity={2} color="#ffffff" />
-            <spotLight position={[0, 15, 0]} intensity={10} angle={0.6} penumbra={1} castShadow />
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-            {/* Prism and Shards removed as per request */}
-            <Sparkles count={100} scale={10} size={4} speed={0.4} opacity={0.5} color="#ffffff" />
-        </>
-    );
-}
 
 // --- Main Export ---
 export default function PrismHero() {
 
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+        }, 3000); // 3 seconds interval
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section className="h-screen w-full relative overflow-hidden bg-white">
-            {/* Background Image with Opacity */}
-            <div
-                className="absolute inset-0 bg-cover bg-center opacity-30 z-0"
-                style={{
-                    backgroundImage: "url('/events/backgroundimge .jpeg')",
-                }}
-            />
-            {/* 3D Scene Background */}
-            <div className="absolute inset-0 z-0">
-                <Canvas gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}>
-                    <Suspense fallback={null}>
-                        <Scene />
-                    </Suspense>
-                </Canvas>
-            </div>
-
-
+            {/* Background Slideshow */}
+            <AnimatePresence mode="popLayout">
+                <motion.div
+                    key={currentImageIndex}
+                    initial={{ x: "100%" }}
+                    animate={{ x: 0 }}
+                    exit={{ x: "-100%" }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                    className="absolute inset-0 z-0 opacity-50"
+                >
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                            backgroundImage: `url('${heroImages[currentImageIndex]}')`,
+                        }}
+                    />
+                </motion.div>
+            </AnimatePresence>
 
             {/* Overlay Content */}
             <>
-                {/* Left Half */}
-                <div className="absolute inset-0 z-30 flex items-center justify-end overflow-hidden"
-                    style={{ clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)' }}
-                >
-                    <div className="relative h-auto mt-25 flex flex-col items-center justify-center text-center px-4 pointer-events-none opacity-100 w-full">
+                <div className="absolute inset-0 z-30 flex items-center justify-center overflow-hidden">
+                    <div className="relative h-auto flex flex-col items-center justify-center text-center px-4 pointer-events-none w-full">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
-                            className="p-8 md:p-16 pointer-events-auto max-w-5xl w-full mx-auto"
+                            className="p-8 md:p-4 pointer-events-auto max-w-full w-full mx-auto"
                         >
-                            <motion.h1
+                            <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-6xl md:text-9xl font-black mb-4 tracking-tighter"
+                                className="text-[13vw] md:text-[9vw] leading-none font-black mb-2 tracking-tighter "
                             >
-                                <span className="bg-clip-text text-transparent bg-linear-to-r from-[#ff0080] via-[#7928ca] to-[#ff0080] animate-gradient-x">
+                                <span className="text-[#3C007A]">
                                     ANTARAGNI
                                 </span>
-                            </motion.h1>
+                            </motion.div>
 
                             <motion.h2
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.8 }}
-                                className="text-2xl md:text-4xl font-extrabold text-[var(--color-primary)] tracking-[0.3em] uppercase mb-8 drop-shadow-sm"
+                                className="text-2xl md:text-4xl font-extrabold text-[var(--color-primary)] tracking-[0.3em] uppercase mb-6 drop-shadow-sm"
                             >
-                                <span className="text-cyan-400 font-medium">Spectrum</span>Saga
+                                Spectrum Saga
                             </motion.h2>
+
                             <motion.p
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.8 }}
-
-                                className="text-purple-950 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-bold leading-relaxed"
+                                className="text-purple-950 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-bold leading-relaxed"
                             >
                                 Immerse yourself in the prism of possibilities. <br />
                                 Where every color tells a story of courage and creativity.
                             </motion.p>
 
-                            <motion.h1
+                            {/* <motion.h1
                                 className="text-2xl text-[var(--color-primary)] drop-shadow-sm"
-                            >The <span className="text-cyan-400 font-bold">SAGA</span> BEGINS IN
-                            </motion.h1>
+                            >The SAGA BEGINS IN
+                            </motion.h1> */}
 
                             <motion.div
                                 initial={{ y: 20, opacity: 0 }}
@@ -242,75 +146,10 @@ export default function PrismHero() {
                             >
                                 <CountdownTimer targetDate="2026-02-19T00:00:00" />
                             </motion.div>
-
-
-                        </motion.div>
-                    </div>
-                </div>
-
-                {/* Right Half */}
-                <div className="absolute inset-0 z-30 flex items-center justify-start overflow-hidden"
-                    style={{ clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)' }}
-                >
-                    <div className="relative h-auto mt-25 flex flex-col items-center justify-center text-center px-4 pointer-events-none opacity-95 w-full">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
-                            className="p-8 md:p-16 pointer-events-auto max-w-5xl w-full mx-auto"
-                        >
-                            <motion.h1
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-6xl md:text-9xl font-black mb-4 tracking-tighter"
-                            >
-                                <span className="bg-clip-text text-transparent bg-linear-to-r from-[#ff0080] via-[#7928ca] to-[#ff0080] animate-gradient-x">
-                                    ANTARAGNI
-                                </span>
-                            </motion.h1>
-
-                            <motion.h2
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.4, duration: 0.8 }}
-                                className="text-2xl md:text-4xl font-extrabold text-[var(--color-primary)] tracking-[0.3em] uppercase mb-8 drop-shadow-sm"
-                            >
-                                <span className="text-cyan-400">Spectrum</span> Saga
-                            </motion.h2>
-
-                            <motion.p
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.6, duration: 0.8 }}
-                                className="relative z-10 text-purple-950 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-bold leading-relaxed"
-                            >
-                                Immerse yourself in the prism of possibilities. <br />
-                                Where every color tells a story of courage and creativity.
-                            </motion.p>
-
-                            <motion.h1 className="text-2xl text-[var(--color-primary)]">
-                                The <span className="text-cyan-400 font-bold">SAGA</span> BEGINS IN
-                            </motion.h1>
-
-                            <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.8, duration: 0.8 }}
-                            >
-                                <CountdownTimer targetDate="2026-02-19T00:00:00" />
-
-                            </motion.div>
-
-
                         </motion.div>
                     </div>
                 </div>
             </>
-
-
-
-
 
             {/* Scroll Indicator */}
             <motion.div

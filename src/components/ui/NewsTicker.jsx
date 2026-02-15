@@ -9,7 +9,7 @@ import { useState } from "react";
 const newsItems = [
     "🔴 LIVE NOW: Antaragni Main Stage - Click here to watch!",
     "🚀 Welcome to the new official website of Antaragni 2026!",
-    "📅 Parakram 2026 starts Feb 15th - Don't miss the inauguration!",
+    "📅 Parakram 2026 starts Feb 14th - Don't miss the inauguration!",
     "🏆 Antaragni & Technorion registration closing soon.",
     "📢 Hackathon begins Feb 18th at the Library."
 ];

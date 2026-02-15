@@ -47,10 +47,10 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="space-y-3">
                         <div className="flex items-center gap-4">
-                            <img src="/events/SRClogo.png" alt="SRC Logo" className="w-24 h-24 object-contain bg-white/5 p-2 rounded-xl border border-white/10" />
+                            <img src="/events/SRClogo.png" alt="SRC Logo" className=" w-24 h-24 object-contain bg-white/5 p-2 rounded-xl border border-white/10" />
                             <div>
-                                <h3 className="text-[var(--color-text-inverted)] font-bold text-2xl leading-none">{config.festivalName}</h3>
-                                <p className="text-sm text-[var(--color-primary-light)] font-medium tracking-wide mt-1">Experience the Legacy</p>
+                                <h3 className="event-title text-[var(--color-text-inverted)] font-bold text-2xl leading-none">{config.festivalName}</h3>
+                                <p className=" event-title text-sm text-[var(--color-primary-light)] font-medium tracking-wide mt-1">Experience the Legacy</p>
                             </div>
                         </div>
                         <p className="text-xs text-[var(--color-text-muted)] leading-relaxed max-w-[250px]">
@@ -78,7 +78,7 @@ export default function Footer() {
 
                     {/* Quick Link Column 1 */}
                     <div>
-                        <h4 className="text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Festival</h4>
+                        <h4 className=" event-title text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Festival</h4>
                         <ul className="space-y-2">
                             {['Events', 'Schedule', 'Gallery', 'Sponsors'].map((item) => (
                                 <li key={item}>
@@ -93,7 +93,7 @@ export default function Footer() {
 
                     {/* Quick Link Column 2 */}
                     <div>
-                        <h4 className="text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Info</h4>
+                        <h4 className="event-title text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Info</h4>
                         <ul className="space-y-2">
                             {['About Us', 'Contact', 'UDAN', 'Team'].map((item) => (
                                 <li key={item}>
@@ -111,7 +111,7 @@ export default function Footer() {
 
                     {/* Contact Column */}
                     <div>
-                        <h4 className="text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Contact</h4>
+                        <h4 className="event-title text-[var(--color-text-inverted)] font-bold mb-4 text-xs uppercase tracking-wider">Contact</h4>
                         <ul className="space-y-3 text-xs">
                             <li className="flex gap-3">
                                 <FaMapMarkerAlt className="text-[var(--color-primary-light)] shrink-0 mt-0.5" />
