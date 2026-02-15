@@ -66,7 +66,7 @@ const BentoGallery = () => {
         }
 
         // Add remaining text cards if any
-     
+
 
         // Add remaining images if any
         while (imageIndex < imageList.length) {
@@ -89,11 +89,10 @@ const BentoGallery = () => {
             <div className="relative z-10 mt-10">
                 {/* Header Section */}
                 <header className="py-12 px-6 container mx-auto flex flex-col items-center text-center">
-<<<<<<< HEAD
-                    <h1 className="font-bold tracking-tight mb-2 text-6xl">
+                    {/* <h1 className="font-bold tracking-tight mb-2 text-6xl">
                         Antaragni 2026
-=======
-                    <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-black/10 shadow-lg relative">
+                    </h1> */}
+                    {/* <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-black/10 shadow-lg relative">
                         <Image
                             src={ghrcelogo}
                             alt="Antaragni Logo"
@@ -101,10 +100,9 @@ const BentoGallery = () => {
                             height={100}
                             className="object-cover w-full h-full bg-white"
                         />
-                    </div>
+                    </div> */}
                     <h1 className="font-bold tracking-tight mb-2">
-                        Antaragni
->>>>>>> 829abf8d65eab03d7fdc4ba7cdd15dd816d2480d
+                        Antaragni 2025
                     </h1>
                     <p className="text-gray-600 max-w-md text-sm md:text-base leading-relaxed mb-8">
                         The biggest Cultural Festival of GHRCE Nagpur <br />
