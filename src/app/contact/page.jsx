@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane } from "react-icons/fa";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+    subsets: ["latin"],
+    weight: ["400", "700"]
+});
 
 export default function ContactPage() {
     const fadeInUp = {
@@ -10,16 +16,16 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="min-h-screen w-full bg-white text-black bg-[radial-gradient(#3C007A_1px,transparent_1px)] [background-size:20px_20px] pt-10">
+        <div className="min-h-screen w-full bg-white text-black pt-10">
             <div className="min-h-screen w-full pt-20 pb-10 px-4 md:px-8 max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
-                    className="text-center mb-16"
+                    className="text-center mb-16 -mt-5"
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500">
+                    <h1 className={`text-5xl md:text-7xl font-bold mb-6 text-black ${montserrat.className}`}>
                         Get in Touch
                     </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
@@ -39,7 +45,8 @@ export default function ContactPage() {
                 p-8 rounded-3xl
                 relative
                 shadow-xl
-                hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]
+                hover:shadow-[0_0_53px_rgba(199,125,255,0.4)]
+                hover:backdrop-saturate-200
                 transition-all duration-300"
                     >
                         <h2 className="text-3xl font-bold mb-6 text-[var(--color-primary)]">College Location</h2>
@@ -77,7 +84,7 @@ export default function ContactPage() {
                     >
                         {/* Info Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                            <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-[0_0_53px_rgba(199,125,255,0.4)] hover:backdrop-saturate-200 transition-all">
                                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-4">
                                     <FaMapMarkerAlt size={20} />
                                 </div>
@@ -88,7 +95,7 @@ export default function ContactPage() {
                                     Nagpur - 440016<br />
                                 </p>
                             </div>
-                            <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                            <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-[0_0_53px_rgba(199,125,255,0.4)] hover:backdrop-saturate-200 transition-all">
                                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4">
                                     <FaEnvelope size={20} />
                                 </div>
@@ -97,9 +104,9 @@ export default function ContactPage() {
                                     src.ghrce@raisoni.net
                                 </p>
                             </div>
-                            <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all md:col-span-2">
+                            <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-6 rounded-2xl shadow-lg hover:shadow-[0_0_53px_rgba(199,125,255,0.4)] hover:backdrop-saturate-200 transition-all md:col-span-2">
                                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4">
-                                    <FaPhone size={20} />
+                                    <FaPhone size={20} className="rotate-[95deg]" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-2 text-gray-800">Contact Us</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
