@@ -45,7 +45,7 @@ export default function EventCard({ event }) {
                         <span className="inline-block px-2 py-1 rounded bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-white mb-3">
                             {event.category}
                         </span>
-                        <h3 className="font-bold text-white mb-2 leading-tight">
+                        <h3 className="event-title font-bold text-white mb-2 leading-tight">
                             {event.name}
                         </h3>
                         <p className="text-gray-300 text-sm line-clamp-2 md:line-clamp-3 opacity-90">

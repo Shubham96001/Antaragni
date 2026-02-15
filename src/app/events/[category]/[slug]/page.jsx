@@ -80,7 +80,7 @@ export default function EventDetailPage({ params }) {
                         >
                             {event.category}
                         </span>
-                        <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight">
+                        <h1 className="text-4xl md:text-7xl font-bold !text-white mb-4 leading-tight">
                             {event.name}
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl">
@@ -97,7 +97,7 @@ export default function EventDetailPage({ params }) {
 
                         {/* Description */}
                         <section>
-                            <h2 className="text-2xl text-white font-bold mb-4 flex items-center">
+                            <h2 className="text-2xl !text-white font-bold mb-4 flex items-center">
                                 <span className="w-1 h-8 mr-3 rounded-full" style={{ backgroundColor: accentColor }}></span>
                                 About the Event
                             </h2>
@@ -108,7 +108,7 @@ export default function EventDetailPage({ params }) {
 
                         {/* Rules */}
                         <section className="bg-white/5 p-8 rounded-2xl border border-white/10">
-                            <h3 className="text-xl text-white font-bold mb-6">Rules & Regulations</h3>
+                            <h3 className="text-xl !text-white font-bold mb-6">Rules & Regulations</h3>
                             <ul className="space-y-3">
                                 {event.rules.map((rule, idx) => (
                                     <li key={idx} className="flex items-start text-gray-300">
@@ -129,7 +129,7 @@ export default function EventDetailPage({ params }) {
                             transition={{ delay: 0.2 }}
                             className="bg-[#111] p-6 rounded-2xl border border-white/10 sticky top-24"
                         >
-                            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider border-b border-white/10 pb-4">
+                            <h3 className="text-lg font-bold !text-white mb-6 uppercase tracking-wider border-b border-white/10 pb-4">
                                 Event Details
                             </h3>
 
@@ -191,7 +191,7 @@ export default function EventDetailPage({ params }) {
                             {/* Contact */}
                             {event.contacts && event.contacts.length > 0 && (
                                 <div className="mt-8">
-                                    <h4 className="text-white text-sm font-bold mb-4">Contact Coordinators</h4>
+                                    <h4 className="!text-white text-sm font-bold mb-4">Contact Coordinators</h4>
                                     {event.contacts.map((contact, i) => (
                                         <div key={i} className="flex items-center justify-between text-xs text-gray-400 mb-2">
                                             <span>{contact.name}</span>
