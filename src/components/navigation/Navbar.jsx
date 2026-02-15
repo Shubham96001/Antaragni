@@ -68,9 +68,9 @@ export default function Navbar() {
                         ))}
 
                         <Link href="https://ghrce.raisoni.net/" target="_blank" rel="noopener noreferrer">
-                            <div className="relative h-10 w-24 lg:h-13 lg:w-27 ml-4">
+                            <div className="relative h-24 w-36 lg:h-24 lg:w-36 ml-4">
                                 <Image
-                                    src="https://ghrce.raisoni.net/assets/images/ghrce-logo.png"
+                                    src="/ghrce-logo-white.jpg"
                                     alt="GHRCE College Logo"
                                     fill
                                     className="object-contain"
@@ -118,7 +118,7 @@ export default function Navbar() {
                         <div className="p-10 flex justify-center border-t border-gray-200">
                             <div className="relative h-16 w-32">
                                 <Image
-                                    src="https://ghrce.raisoni.net/assets/images/ghrce-logo.png"
+                                    src="/ghrce-logo-white.jpg"
                                     alt="GHRCE College Logo"
                                     fill
                                     className="object-contain"

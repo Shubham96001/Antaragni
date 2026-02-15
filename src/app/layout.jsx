@@ -20,8 +20,8 @@ const nunito = Nunito_Sans({
 
 export const metadata = {
     title: "Antaragni 2026 | GHRCEN",
-    description: "Official website of Antaragni 2026, the national level cultural festival of GHRCEN.",
-    metadataBase: new URL('https://antaragni-2026.vercel.app'), // Replace with your actual domain
+    description: "Official website of Antaragni 2026, cultural festival of GHRCEN.",
+    metadataBase: new URL('https://antaragni.co.in/'), // Replace with your actual domain
     keywords: ["Antaragni", "GHRCEN", "Cultural Festival", "Technorion", "Parakram", "Nagpur", "College Fest"],
     authors: [{ name: "GHRCEN" }],
     icons: {
@@ -30,8 +30,8 @@ export const metadata = {
     },
     openGraph: {
         title: "Antaragni 2026 | GHRCEN",
-        description: "Official website of Antaragni 2026, the national level cultural festival of GHRCEN.",
-        url: "https://antaragni.ghrce.raisoni.net",
+        description: "Official website of Antaragni 2026, cultural festival of GHRCEN.",
+        url: "https://antaragni.co.in/",
         siteName: "Antaragni 2026",
         images: [
             {
@@ -47,7 +47,7 @@ export const metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Antaragni 2026 | GHRCEN",
-        description: "Official website of Antaragni 2026, the national level cultural festival of GHRCEN.",
+        description: "Official website of Antaragni 2026, cultural festival of GHRCEN.",
         images: ["/AT.png"],
     },
 };
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
                 </div>
 
                 {/* Main Content with padding to account for fixed header */}
-                <main className="flex-grow pt-[125px]">
+                <main className="flex-grow pt-[145px]">
                     {children}
                 </main>
                 <Footer />

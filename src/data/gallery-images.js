@@ -8,7 +8,6 @@ export const galleryImages = {
         "/events/Singing.jpg",
         "/events/ant3.jpg",
         "/events/fashion-show.jpeg",
-        "/events/fashionShow (1).jpg",
         "/events/fashionshow.jpg",
         "/events/flashMob.jpg",
         "/events/folkDance (2).jpg",
@@ -28,6 +27,6 @@ export const galleryImages = {
         "/events/chess.jpeg",
         "/events/football.jpeg",
         "/events/boxcricket-ChgQRysi.JPG",
-        
+
     ]
 };
