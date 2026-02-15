@@ -35,7 +35,7 @@ export default function SponsorsPage() {
                 variants={fadeInUp}
                 className="mb-16"
             >
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-black">
                     Our Partners
                 </h1>
                 <p className="text-xl text-gray-700 max-w-2xl mx-auto">
@@ -50,22 +50,22 @@ export default function SponsorsPage() {
                 viewport={{ once: true }}
                 className="mb-20"
             >
-                <h2 className="text-2xl md:text-3xl font-bold text-yellow-600 mb-8 uppercase tracking-widest border-b border-yellow-600/30 inline-block pb-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-black-400 mb-8 uppercase tracking-widest border-b border-black-600/30 inline-block pb-2">
                     Title Sponsor
                 </h2>
                 <div className="flex justify-center">
                     {sponsors.title.map((sponsor, idx) => (
                         <div
                             key={idx}
-                            className="w-full max-w-lg bg-gray-50 backdrop-blur-xl border border-yellow-600/30 rounded-3xl p-8 hover:bg-gray-100 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_50px_rgba(234,179,8,0.2)]"
+                            className="w-full max-w-lg bg-gray-50 backdrop-blur-xl border border-yellow-600/30 rounded-3xl p-8 hover:border-gray-400 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
                         >
                             <img
                                 src={sponsor.src}
                                 alt={sponsor.name}
-                                className="w-full h-48 md:h-64 object-cover rounded-xl mb-4 grayscale hover:grayscale-0 transition-all duration-500"
+                                className="w-full h-48 md:h-64 object-cover rounded-xl mb-4 transition-all duration-500"
                             />
                             <h3 className="text-3xl font-bold">{sponsor.name}</h3>
-                            <p className="text-yellow-700/80">{sponsor.type}</p>
+                            <p className="text-yellow-700/80 font-bold">{sponsor.type}</p>
                         </div>
                     ))}
                 </div>
@@ -78,22 +78,22 @@ export default function SponsorsPage() {
                 viewport={{ once: true }}
                 className="mb-20"
             >
-                <h2 className="text-xl md:text-2xl font-bold text-orange-600 mb-8 uppercase tracking-widest">
+                <h2 className="text-xl md:text-2xl font-bold text-black-600 mb-8 uppercase tracking-widest">
                     Powered By
                 </h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     {sponsors.poweredBy.map((sponsor, idx) => (
                         <div
                             key={idx}
-                            className="w-full max-w-md bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                            className="w-full max-w-md bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
                         >
                             <img
                                 src={sponsor.src}
                                 alt={sponsor.name}
-                                className="w-full h-40 object-cover rounded-lg mb-4 grayscale hover:grayscale-0 transition-all duration-500"
+                                className="w-full h-40 object-cover rounded-lg mb-4 transition-all duration-500"
                             />
                             <h3 className="text-2xl font-bold">{sponsor.name}</h3>
-                            <p className="text-orange-700/80">{sponsor.type}</p>
+                            <p className="text-orange-700/80 font-bold">{sponsor.type}</p>
                         </div>
                     ))}
                 </div>
@@ -112,15 +112,15 @@ export default function SponsorsPage() {
                     {sponsors.associate.map((sponsor, idx) => (
                         <div
                             key={idx}
-                            className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 hover:border-gray-400 transition-all duration-300 hover:scale-105"
+                            className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 hover:border-gray-400 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
                         >
                             <img
                                 src={sponsor.src}
                                 alt={sponsor.name}
-                                className="w-full h-24 object-cover rounded mb-3 grayscale hover:grayscale-0 transition-all duration-500"
+                                className="w-full h-24 object-cover rounded mb-3 transition-all duration-500"
                             />
                             <h4 className="text-lg font-semibold">{sponsor.name}</h4>
-                            <p className="text-sm text-gray-500">{sponsor.type}</p>
+                            <p className="text-sm text-gray-500 font-bold">{sponsor.type}</p>
                         </div>
                     ))}
                 </div>
