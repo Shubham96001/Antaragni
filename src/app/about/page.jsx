@@ -300,7 +300,7 @@ export default function AboutPage() {
           Antaragni 2026
         </h1>
         <p className="text-xl md:text-2xl text-gray-700 max-w-3xl   mx-auto leading-relaxed font-medium ">
-          Antaragni is not just a festival, it's a legacy a spectrum of emotions,
+          Antaragni is not just a festival, it&apos;s a legacy a spectrum of emotions,
           talent, and culture colliding to create magic.
         </p>
       </motion.section>

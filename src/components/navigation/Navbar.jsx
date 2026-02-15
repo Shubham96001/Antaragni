@@ -67,8 +67,16 @@ export default function Navbar() {
                             </Link>
                         ))}
 
-                        <Link href="https://ghrce.raisoni.net/">
-                            <img className="h-10 w-auto ml-4 lg:h-13 lg:w-27" src="https://ghrce.raisoni.net/assets/images/ghrce-logo.png" alt="College Logo" />
+                        <Link href="https://ghrce.raisoni.net/" target="_blank" rel="noopener noreferrer">
+                            <div className="relative h-10 w-24 lg:h-13 lg:w-27 ml-4">
+                                <Image
+                                    src="https://ghrce.raisoni.net/assets/images/ghrce-logo.png"
+                                    alt="GHRCE College Logo"
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 96px, 108px"
+                                />
+                            </div>
                         </Link>
                     </nav>
 
@@ -108,11 +116,15 @@ export default function Navbar() {
 
                         {/* FIX 4: Added the College Logo at the bottom of the mobile menu to match your image */}
                         <div className="p-10 flex justify-center border-t border-gray-200">
-                            <img
-                                src="https://ghrce.raisoni.net/assets/images/ghrce-logo.png"
-                                alt="College Logo"
-                                className="h-15 w-30 "
-                            />
+                            <div className="relative h-16 w-32">
+                                <Image
+                                    src="https://ghrce.raisoni.net/assets/images/ghrce-logo.png"
+                                    alt="GHRCE College Logo"
+                                    fill
+                                    className="object-contain"
+                                    sizes="128px"
+                                />
+                            </div>
                         </div>
                     </motion.div>
                 )}

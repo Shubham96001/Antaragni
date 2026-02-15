@@ -3,40 +3,40 @@ import { motion } from "framer-motion";
 import { LuArrowUpRight } from "react-icons/lu";
 import { galleryImages } from "../../data/gallery-images";
 
-const BentoGallery = () => {
-    // Card Components
-    const ImageCard = ({ src, alt = "Event Image" }) => {
-        if (!src) return null;
-        return (
-            <motion.div whileHover={{ scale: 1.01 }} className="mb-4 break-inside-avoid rounded-[1.5rem] overflow-hidden relative group shadow-lg">
-                <img
-                    src={src}
-                    alt={alt}
-                    className="w-full h-auto block object-contain bg-gray-100"
-                    loading="lazy"
-                />
-            </motion.div>
-        );
-    };
-
-    const TextCard = ({ src, children, className = "" }) => (
-        <motion.div whileHover={{ scale: 1.01 }} className={`mb-4 break-inside-avoid relative rounded-[1.5rem] overflow-hidden group shadow-lg ${className}`}>
-            {src && (
-                <>
-                    <img
-                        src={src}
-                        alt="Background"
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/60 z-10 transition-opacity duration-300 group-hover:bg-black/50" />
-                </>
-            )}
-            <div className={`relative z-20 h-full p-6 flex flex-col justify-between min-h-[200px] ${!src ? 'bg-gray-100' : ''}`}>
-                {children}
-            </div>
+// Card Components defined outside to avoid re-creation on render
+const ImageCard = ({ src, alt = "Event Image" }) => {
+    if (!src) return null;
+    return (
+        <motion.div whileHover={{ scale: 1.01 }} className="mb-4 break-inside-avoid rounded-[1.5rem] overflow-hidden relative group shadow-lg">
+            <img
+                src={src}
+                alt={alt}
+                className="w-full h-auto block object-contain bg-gray-100"
+                loading="lazy"
+            />
         </motion.div>
     );
+};
 
+const TextCard = ({ src, children, className = "" }) => (
+    <motion.div whileHover={{ scale: 1.01 }} className={`mb-4 break-inside-avoid relative rounded-[1.5rem] overflow-hidden group shadow-lg ${className}`}>
+        {src && (
+            <>
+                <img
+                    src={src}
+                    alt="Background"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/60 z-10 transition-opacity duration-300 group-hover:bg-black/50" />
+            </>
+        )}
+        <div className={`relative z-20 h-full p-6 flex flex-col justify-between min-h-[200px] ${!src ? 'bg-gray-100' : ''}`}>
+            {children}
+        </div>
+    </motion.div>
+);
+
+const BentoGallery = () => {
     const getGalleryContent = () => {
         const images = galleryImages.antaragni || [];
 

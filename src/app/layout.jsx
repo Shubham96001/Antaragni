@@ -21,8 +21,34 @@ const nunito = Nunito_Sans({
 export const metadata = {
     title: "Antaragni 2026 | GHRCEN",
     description: "Official website of Antaragni 2026, the national level cultural festival of GHRCEN.",
+    metadataBase: new URL('https://antaragni-2026.vercel.app'), // Replace with your actual domain
+    keywords: ["Antaragni", "GHRCEN", "Cultural Festival", "Technorion", "Parakram", "Nagpur", "College Fest"],
+    authors: [{ name: "GHRCEN" }],
     icons: {
         icon: '/AT.png',
+        apple: '/AT.png',
+    },
+    openGraph: {
+        title: "Antaragni 2026 | GHRCEN",
+        description: "Official website of Antaragni 2026, the national level cultural festival of GHRCEN.",
+        url: "https://antaragni.ghrce.raisoni.net",
+        siteName: "Antaragni 2026",
+        images: [
+            {
+                url: "/AT.png",
+                width: 800,
+                height: 600,
+                alt: "Antaragni 2026 Logo",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Antaragni 2026 | GHRCEN",
+        description: "Official website of Antaragni 2026, the national level cultural festival of GHRCEN.",
+        images: ["/AT.png"],
     },
 };
 
