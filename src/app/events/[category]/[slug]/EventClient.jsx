@@ -1,0 +1,214 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUsers, FaTrophy, FaPhone, FaArrowLeft } from "react-icons/fa";
+
+export default function EventClient({ event, category }) {
+    const [showParakramPopup, setShowParakramPopup] = useState(false);
+
+    // Theme colors based on category
+    const themeColors = {
+        antaragni: "var(--antaragni-primary)",
+        technorion: "var(--technorion-primary)",
+        parakram: "var(--parakram-primary)"
+    };
+    const accentColor = themeColors[category] || "#ffffff";
+
+    const handleRegisterClick = (e) => {
+        if (category === "parakram") {
+            e.preventDefault();
+            setShowParakramPopup(true);
+        }
+    };
+
+    return (
+        <article className="min-h-screen bg-[#050505] pb-20">
+            {/* Hero Section */}
+            <div className="relative h-[60vh] w-full overflow-hidden">
+                <div
+                    className="absolute inset-0 bg-cover bg-top"
+                    style={{ backgroundImage: `url(${event.bannerImage})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#050505]" />
+
+                <div className="absolute top-24 left-4 md:left-12 z-20">
+                    <Link href="/events" className="flex items-center text-white/80 hover:text-white transition-colors bg-black/30 px-4 py-2 rounded-full backdrop-blur-md">
+                        <FaArrowLeft className="mr-2" /> Back to Events
+                    </Link>
+                </div>
+
+                <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="container mx-auto"
+                    >
+                        <span
+                            className="inline-block px-3 py-1 rounded text-xs font-bold uppercase tracking-widest text-black mb-4"
+                            style={{ backgroundColor: accentColor }}
+                        >
+                            {event.category}
+                        </span>
+                        <h1 className="text-4xl md:text-7xl font-bold !text-white mb-4 leading-tight">
+                            {event.name}
+                        </h1>
+                        <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl">
+                            {event.shortDescription}
+                        </p>
+                    </motion.div>
+                </div>
+            </div>
+
+            <div className="container mx-auto px-4 md:px-12 mt-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    {/* Main Content */}
+                    <div className="lg:col-span-2 space-y-12">
+                        {/* Description */}
+                        <section>
+                            <h2 className="text-2xl !text-white font-bold mb-4 flex items-center">
+                                <span className="w-1 h-8 mr-3 rounded-full" style={{ backgroundColor: accentColor }}></span>
+                                About the Event
+                            </h2>
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                {event.description}
+                            </p>
+                        </section>
+
+                        {/* Rules */}
+                        <section className="bg-white/5 p-8 rounded-2xl border border-white/10">
+                            <h3 className="text-xl !text-white font-bold mb-6">Rules & Regulations</h3>
+                            <ul className="space-y-3">
+                                {event.rules.map((rule, idx) => (
+                                    <li key={idx} className="flex items-start text-gray-300">
+                                        <span className="mr-3 text-lg" style={{ color: accentColor }}>•</span>
+                                        {rule}
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    </div>
+
+                    {/* Sidebar Info */}
+                    <div className="space-y-6">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="bg-[#111] p-6 rounded-2xl border border-white/10 sticky top-24"
+                        >
+                            <h3 className="text-lg font-bold !text-white mb-6 uppercase tracking-wider border-b border-white/10 pb-4">
+                                Event Details
+                            </h3>
+
+                            <div className="space-y-4 text-sm">
+                                <div className="flex items-center text-gray-300">
+                                    <FaCalendarAlt className="w-5 h-5 mr-4 text-white/50" />
+                                    <div>
+                                        <span className="block text-xs text-gray-500 uppercase">Date</span>
+                                        {event.details.date}
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center text-gray-300">
+                                    <FaClock className="w-5 h-5 mr-4 text-white/50" />
+                                    <div>
+                                        <span className="block text-xs text-gray-500 uppercase">Time</span>
+                                        {event.details.time}
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center text-gray-300">
+                                    <FaMapMarkerAlt className="w-5 h-5 mr-4 text-white/50" />
+                                    <div>
+                                        <span className="block text-xs text-gray-500 uppercase">Venue</span>
+                                        {event.details.venue}
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center text-gray-300">
+                                    <FaUsers className="w-5 h-5 mr-4 text-white/50" />
+                                    <div>
+                                        <span className="block text-xs text-gray-500 uppercase">Team Size</span>
+                                        {event.details.teamSize}
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center text-gray-300">
+                                    <FaTrophy className="w-5 h-5 mr-4 text-white/50" />
+                                    <div>
+                                        <span className="block text-xs text-gray-500 uppercase">Prize Pool</span>
+                                        <span className="font-bold" style={{ color: accentColor }}>{event.details.prizePool}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 pt-6 border-t border-white/10">
+                                <a
+                                    href={event.registrationUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleRegisterClick}
+                                    className="block w-full py-4 rounded-xl font-bold text-center text-black hover:scale-105 transition-transform shadow-lg shadow-white/10"
+                                    style={{ backgroundColor: accentColor }}
+                                >
+                                    Register Now
+                                </a>
+                            </div>
+
+                            {/* Contact */}
+                            {event.contacts && event.contacts.length > 0 && (
+                                <div className="mt-8">
+                                    <h4 className="!text-white text-sm font-bold mb-4">Contact Coordinators</h4>
+                                    {event.contacts.map((contact, i) => (
+                                        <div key={i} className="flex items-center justify-between text-xs text-gray-400 mb-2">
+                                            <span>{contact.name}</span>
+                                            <a href={`tel:${contact.phone}`} className="hover:text-white flex items-center">
+                                                <FaPhone className="mr-2" /> {contact.phone}
+                                            </a>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Parakram Popup */}
+            <AnimatePresence>
+                {showParakramPopup && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                        onClick={() => setShowParakramPopup(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8 max-w-md w-full text-center relative overflow-hidden"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500" />
+                            <h3 className="text-2xl font-bold text-white mb-4">Trials Completed</h3>
+                            <p className="text-gray-300 mb-8">
+                                The trials for this event have finished. Please check with the coordinators for further information.
+                            </p>
+                            <button
+                                onClick={() => setShowParakramPopup(false)}
+                                className="bg-white text-black font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform"
+                            >
+                                Close
+                            </button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </article>
+    );
+}
