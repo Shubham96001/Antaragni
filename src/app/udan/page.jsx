@@ -3,10 +3,7 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaBookOpen } from "react-icons/fa";
 
-import { useState } from "react";
-
 export default function UdanPage() {
-    const [showPdf, setShowPdf] = useState(false);
     return (
         <div className="min-h-screen w-full pt-20 pb-10 px-4 md:px-8 max-w-7xl mx-auto text-black bg-white">
             <div className="flex flex-col md:flex-row items-center gap-12 mt-10">
@@ -57,13 +54,15 @@ export default function UdanPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button
-                            onClick={() => setShowPdf(!showPdf)}
+                        <a
+                            href="/events/UDAN2025-DxvGWi_G.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg"
                         >
                             <FaBookOpen />
-                            {showPdf ? "Close Reader" : "Read Online"}
-                        </button>
+                            Read Online
+                        </a>
                         <a
                             href="/events/UDAN2025-DxvGWi_G.pdf"
                             download="UDAN_Magazine_2026.pdf"
@@ -73,23 +72,19 @@ export default function UdanPage() {
                             Download PDF
                         </a>
                     </div>
-
-                    {/* PDF Viewer */}
-                    {showPdf && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="mt-8 w-full h-[600px] border-2 border-gray-200 rounded-xl overflow-hidden shadow-2xl"
-                        >
-                            <iframe
-                                src="/events/UDAN2025-DxvGWi_G.pdf"
-                                className="w-full h-full"
-                                title="UDAN Magazine Viewer"
-                            ></iframe>
-                        </motion.div>
-                    )}
                 </motion.div>
+            </div>
 
+            {/* Previous Editions Link */}
+            <div className="mt-16 text-center border-t border-gray-100 pt-8">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">Previous Editions</h3>
+                <a
+                    href="/events/UDAN2025-DxvGWi_G.pdf"
+                    download="UDAN_Magazine_2025.pdf"
+                    className="inline-flex items-center gap-2 text-[#7B2CBF] hover:text-[#5A189A] font-bold text-lg hover:underline transition-all"
+                >
+                    <FaDownload /> Download 2025 Edition
+                </a>
             </div>
         </div>
     );

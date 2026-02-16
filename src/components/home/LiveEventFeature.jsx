@@ -7,7 +7,7 @@ import { FaPlay, FaCalendarAlt, FaMapMarkerAlt, FaClock, FaTrophy } from "react-
 import { schedule } from "@/data/schedule";
 import { getEventDetails } from "@/utils/eventHelpers";
 
-export default function LiveEventFeature() {
+export default function LiveEventFeature({ compact = false }) {
     const [activeEvent, setActiveEvent] = useState(null);
     const [eventStatus, setEventStatus] = useState("loading"); // 'live', 'upcoming', 'none'
     const [timeRemaining, setTimeRemaining] = useState("");
@@ -24,13 +24,13 @@ export default function LiveEventFeature() {
 
                 // Extract start time (part before "-")
                 const startTimePart = timeStr.split("-")[0].trim();
-                const startDateTimeString = `${dateStr} ${currentYear} ${startTimePart}`;
+                const startDateTimeString = `${dateStr}, ${currentYear} ${startTimePart}`;
                 const startDate = new Date(startDateTimeString);
 
                 let endDate;
                 if (timeStr.includes("-")) {
                     const endTimePart = timeStr.split("-")[1].trim();
-                    const endDateTimeString = `${dateStr} ${currentYear} ${endTimePart}`;
+                    const endDateTimeString = `${dateStr}, ${currentYear} ${endTimePart}`;
                     endDate = new Date(endDateTimeString);
                 } else {
                     // Default duration 2 hours if no end time specified
@@ -102,52 +102,63 @@ export default function LiveEventFeature() {
         return () => clearInterval(interval);
     }, []);
 
-    if (eventStatus === "none" || eventStatus === "loading") {
-        return null; // Or show a default "Stay Tuned" state
+    if (eventStatus === "loading") {
+        return (
+            <div className={`py-12 relative px-4 md:px-8 ${compact ? 'w-full' : 'max-w-7xl mx-auto'} animate-pulse`}>
+                <div className="h-64 bg-gray-200 rounded-3xl"></div>
+            </div>
+        );
     }
 
-    const { displayName, subtitle, description, bannerImage, location, start, category } = activeEvent;
+    // Fallback if no active event found - show the first event of the fest as a teaser
+    const displayEvent = activeEvent || {
+        displayName: "Antaragni",
+        subtitle: "The Saga Spectrum",
+        description: "Join us for the biggest cultural fest of Central India.",
+        bannerImage: "/events/parakram.jpeg",
+        location: "GHRCE Campus",
+        start: new Date(),
+        category: "Fest",
+    };
+
+    // Use displayEvent properties
+    const { displayName, subtitle, description, bannerImage, location, start, category } = displayEvent;
 
     // Format time display
     const timeDisplay = start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     return (
-        <section className="py-12 relative px-4 md:px-8 max-w-7xl mx-auto">
+        <section className={`py-12 relative px-4 md:px-8 ${compact ? 'w-full' : 'max-w-7xl mx-auto'}`}>
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-accent)]/10 blur-3xl -z-10" />
 
             <div className="flex items-center gap-3 mb-6">
                 <span className="relative flex h-3 w-3">
-                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${eventStatus === 'live' ? 'bg-red-400' : 'bg-blue-400'}`}></span>
-                    <span className={`relative inline-flex rounded-full h-3 w-3 ${eventStatus === 'live' ? 'bg-red-500' : 'bg-blue-500'}`}></span>
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-red-400`}></span>
+                    <span className={`relative inline-flex rounded-full h-3 w-3 bg-red-500`}></span>
                 </span>
                 <h2 className="font-bold tracking-wider uppercase text-lg md:text-xl">
-                    {eventStatus === 'live' ? 'Happening Now' : 'Up Next'}
+                    Happening Now
                 </h2>
-                {eventStatus === 'upcoming' && (
-                    <span className="text-sm font-medium text-[var(--color-primary)] bg-white/50 px-3 py-1 rounded-full border border-[var(--color-primary)]/20">
-                        {timeRemaining}
-                    </span>
-                )}
             </div>
 
             <motion.div
-                key={displayName} // Animate when event changes
+                key={displayName || "default"}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="grid md:grid-cols-2 gap-0 bg-white rounded-3xl overflow-hidden shadow-2xl border border-[var(--color-primary)]/20 group"
+                className={`grid ${compact ? 'grid-cols-1' : 'md:grid-cols-2'} gap-0 bg-white rounded-3xl overflow-hidden shadow-2xl border border-[var(--color-primary)]/20 group h-full`}
             >
                 {/* Image Section */}
-                <div className="relative h-64 md:h-auto overflow-hidden">
+                <div className={`relative ${compact ? 'aspect-video md:aspect-square w-full' : 'h-64 md:h-auto'} overflow-hidden`}>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
                     <img
                         src={bannerImage || "/events/tech.png"}
-                        alt={displayName}
+                        alt={displayName || "Event"}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute bottom-4 left-4 z-20">
-                        <span className={`text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide ${eventStatus === 'live' ? 'bg-red-600' : 'bg-blue-600'}`}>
-                            {category}
+                        <span className={`text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide bg-red-600`}>
+                            {category || "Event"}
                         </span>
                     </div>
                 </div>
@@ -191,10 +202,15 @@ export default function LiveEventFeature() {
                         </div>
                     </div>
 
-                    {eventStatus === 'live' ? (
-                        <Link href="/live" className="w-full md:w-auto bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    {eventStatus === 'live' || true ? ( // Always show button for now as per request/fallback
+                        <a
+                            href="https://www.youtube.com/@GHRCENAGPUROfficial/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full md:w-auto bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1"
+                        >
                             <FaPlay className="animate-pulse" /> Watch Live Stream
-                        </Link>
+                        </a>
                     ) : (
                         <div className="w-full md:w-auto bg-gray-100 text-gray-500 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 cursor-not-allowed">
                             <FaCalendarAlt /> Starting Soon

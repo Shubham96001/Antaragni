@@ -311,7 +311,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center gap-12 ">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[var(--color-primary)]">About GHRCE</h2>
-              <p className="text-gray-700 text-lg leading-relaxed align-justify font-medium">
+              <p className="text-gray-700 text-lg leading-relaxed text-justify font-medium">
                 G.H. Raisoni College of Engineering (GHRCE) Nagpur, established in 1996, is an Empowered autonomous institution affiliated to Rashtrasant Tukadoji Maharaj Nagpur University. The institute became Autonomous in 2010 and UGC has renewed autonomous status till 2032. It has been awarded A++ (3.55/4) grade by NAAC during 3 rd cycle in 2023. It is ranked in the band of 201-300 in year 2025 PAN India in Engineering Discipline, as declared by National Institutional Ranking Framework (NIRF) 2025, MoE, Government of India.
               </p>
             </div>
@@ -328,7 +328,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[var(--color-primary)]">About Antaragni</h2>
-              <p className="text-gray-700 text-lg leading-relaxed align-justify font-medium">
+              <p className="text-gray-700 text-lg leading-relaxed text-justify font-medium">
                 ANTARAGNI-2026 is the Annual Fest of G. H. Raisoni College of Engineering, taking things to a greater level this year. With competitions in dance, film and photography, music, dramatics, and various technical events with a unique twist, it promises to be an unforgettable event.
 
                 The festival includes events like dancing, singing, and fashion shows. Antaragni, being the cultural part of the gathering, observes the maximum audience participation, starting from day one and concluding with a grand finale featuring a renowned celebrity.
