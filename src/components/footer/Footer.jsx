@@ -6,35 +6,10 @@ import { FaInstagram, FaFacebook, FaTwitter, FaYoutube, FaMapMarkerAlt, FaPhone,
 import { useEffect, useState } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 
-function AnimatedCounter({ value }) {
-    const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
-    const display = useTransform(spring, (current) => Math.round(current).toLocaleString());
-
-    useEffect(() => {
-        spring.set(value);
-    }, [value, spring]);
-
-    return (
-        <div className="flex items-center gap-3 px-5 py-2 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-full border border-purple-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] transition-all duration-500 group">
-            <span className="text-xs font-bold tracking-[0.2em] text-purple-400 uppercase group-hover:text-pink-400 transition-colors">Visitors</span>
-            <div className="w-[1px] h-4 bg-white/20"></div>
-            <motion.span className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 drop-shadow-lg font-mono">
-                {display}
-            </motion.span>
-        </div>
-    );
-}
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     const [visits, setVisits] = useState(0);
-
-    useEffect(() => {
-        fetch("/api/visits")
-            .then(res => res.json())
-            .then(data => setVisits(data.count))
-            .catch(() => { });
-    }, []);
 
     return (
         <footer className="relative bg-[var(--color-footer-bg)] text-[var(--color-text-muted)] text-sm overflow-hidden border-t border-[var(--color-border)]/10">
@@ -130,8 +105,14 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li className="pt-2">
-                                <AnimatedCounter value={visits} />
-                            </li>
+                                    <div className="bg-white rounded px-3 py-1 inline-flex items-center gap-2">
+
+                                      <img
+                                        src="https://hits.sh/src-ghrce.vercel.app.svg?style=flat-square&label=visits&color=000&labelColor=fff"
+                                        alt="Visitor Counter"
+                                        />
+                                    </div>
+                                    </li>
                         </ul>
                     </div>
                 </div>
