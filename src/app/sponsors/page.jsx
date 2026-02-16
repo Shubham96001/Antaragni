@@ -1,26 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ShahOverseas from "../../assets/ShahOverseas.jpeg";
+import Anantika from "../../assets/Avantika.jpeg";
+import KwickCoffee from "../../assets/KwickCoffee.jpeg";
+// import SSInfotech from "../../assets/KwickCoffee.jpeg";
+import JBL from "../../assets/JBL.jpeg";
+import BalajiBags from "../../assets/BalajiBags.jpeg";
+import hoc from "../../assets/HouseOfChap.jpeg";
+import AkanshaJwellery from "../../assets/AkanshaJewellery.jpeg";
+
 
 const sponsors = {
-    // INSTRUCTIONS:
-    // 1. Add your sponsor images to the 'public/sponsors/' folder.
-    // 2. Update the 'src' paths below to match your filenames (e.g., "/sponsors/my-sponsor.png").
-
-    title: [
-        { name: "TechGiant", type: "Title Sponsor", src: "https://picsum.photos/seed/techgiant/400/200" },
-    ],
     poweredBy: [
-        { name: "FutureSystems", type: "Powered By", src: "https://picsum.photos/seed/future/300/150" },
-        { name: "EnergyCorp", type: "Co-Powered By", src: "https://picsum.photos/seed/energy/300/150" },
-    ],
-    associate: [
-        { name: "AlphaBank", type: "Banking Partner", src: "https://picsum.photos/seed/bank/200/100" },
-        { name: "BetaFoods", type: "Food Partner", src: "https://picsum.photos/seed/food/200/100" },
-        { name: "GammaWear", type: "Merchandise Partner", src: "https://picsum.photos/seed/wear/200/100" },
-        { name: "DeltaTravel", type: "Travel Partner", src: "https://picsum.photos/seed/travel/200/100" },
-        { name: "EpsilonMedia", type: "Media Partner", src: "https://picsum.photos/seed/media/200/100" },
-        { name: "ZetaGaming", type: "Gaming Partner", src: "https://picsum.photos/seed/game/200/100" },
+        { name: "SHAH Overseas", src: ShahOverseas },
+        { name: "Kwick Coffee", src:  KwickCoffee },
+        { name: "BalajiBags", src: BalajiBags },
+        { name: "Anantika Bag", src:  Anantika },
+        { name: "House of Chap", src: hoc },
+        { name: "Akansha Jwellery", src: AkanshaJwellery },
+        { name: "S.V.Solar", src: "https://picsum.photos/seed/energy/300/150" },
+        { name: "Mater chef", src: "https://picsum.photos/seed/energy/300/150" },
+        { name: "water", src: "https://picsum.photos/seed/energy/300/150" },
+        { name: "JBL", src: JBL },
+        { name: "JB Education", src: "https://picsum.photos/seed/energy/300/150" },
+        { name: "Lakme Life Style", src: "https://picsum.photos/seed/energy/300/150" },
     ],
 };
 
@@ -47,33 +51,6 @@ export default function SponsorsPage() {
                 </p>
             </motion.div>
 
-            {/* Title Sponsor */}
-            <motion.section
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="mb-20"
-            >
-                <h2 className="text-2xl md:text-3xl font-bold text-black-400 mb-8 uppercase tracking-widest border-b border-black-600/30 inline-block pb-2">
-                    Title Sponsor
-                </h2>
-                <div className="flex justify-center">
-                    {sponsors.title.map((sponsor, idx) => (
-                        <div
-                            key={idx}
-                            className="w-full max-w-lg bg-gray-50 backdrop-blur-xl border border-yellow-600/30 rounded-3xl p-8 hover:border-gray-400 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
-                        >
-                            <img
-                                src={sponsor.src}
-                                alt={sponsor.name}
-                                className="w-full h-48 md:h-64 object-cover rounded-xl mb-4 transition-all duration-500"
-                            />
-                            <h3 className="text-3xl font-bold">{sponsor.name}</h3>
-                            <p className="text-yellow-700/80 font-bold">{sponsor.type}</p>
-                        </div>
-                    ))}
-                </div>
-            </motion.section>
 
             {/* Powered By */}
             <motion.section
@@ -82,19 +59,16 @@ export default function SponsorsPage() {
                 viewport={{ once: true }}
                 className="mb-20"
             >
-                <h2 className="text-xl md:text-2xl font-bold text-black-600 mb-8 uppercase tracking-widest">
-                    Powered By
-                </h2>
-                <div className="flex flex-wrap justify-center gap-8">
+                <div className="flex flex-wrap gap-2">
                     {sponsors.poweredBy.map((sponsor, idx) => (
                         <div
                             key={idx}
-                            className="w-full max-w-md bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
+                            className="w-100 max-w-md bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
                         >
                             <img
-                                src={sponsor.src}
+                                src={sponsor.src?.src || sponsor.src}
                                 alt={sponsor.name}
-                                className="w-full h-40 object-cover rounded-lg mb-4 transition-all duration-500"
+                                className="w-60 h-50 object-cover rounded-lg mb-4 transition-all duration-500"
                             />
                             <h3 className="text-2xl font-bold">{sponsor.name}</h3>
                             <p className="text-orange-700/80 font-bold">{sponsor.type}</p>
@@ -103,32 +77,7 @@ export default function SponsorsPage() {
                 </div>
             </motion.section>
 
-            {/* Associate Sponsors */}
-            <motion.section
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-            >
-                <h2 className="text-lg md:text-xl font-bold text-gray-600 mb-8 uppercase tracking-widest">
-                    Associate Partners
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {sponsors.associate.map((sponsor, idx) => (
-                        <div
-                            key={idx}
-                            className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 hover:border-gray-400 transition-all duration-300 hover:scale-100 hover:shadow-2xl"
-                        >
-                            <img
-                                src={sponsor.src}
-                                alt={sponsor.name}
-                                className="w-full h-24 object-cover rounded mb-3 transition-all duration-500"
-                            />
-                            <h4 className="text-lg font-semibold">{sponsor.name}</h4>
-                            <p className="text-sm text-gray-500 font-bold">{sponsor.type}</p>
-                        </div>
-                    ))}
-                </div>
-            </motion.section>
+            
         </div>
     );
 }
