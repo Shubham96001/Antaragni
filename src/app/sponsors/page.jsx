@@ -96,7 +96,7 @@ export default function SponsorsPage() {
                 </p>
             </motion.div>
 
-            {renderSection("Title Sponsor", sponsors.titleSponsor)}
+            {renderSection("Powered by", sponsors.titleSponsor)}
             {renderSection("Style Partner", sponsors.stylePartner)}
             {renderSection("Education Partner", sponsors.educationPartner)}
             {renderSection("In Association With", sponsors.inAssociationWith)}
