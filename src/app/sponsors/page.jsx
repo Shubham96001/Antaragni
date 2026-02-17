@@ -14,6 +14,8 @@ import ISASIndia from "../../assets/ISASIndia.jpeg";
 import Water from "../../assets/water stall.jpeg";
 import JBEducation from "../../assets/JBEducation.png";
 import shubis_mocktail from "../../assets/shubis mocktail1.jpeg";
+import Aaynaa from "../../assets/Aaynaa.jpeg";
+import aelin from "../../assets/aelin.jpeg";
 
 const sponsors = {
     titleSponsor: [
@@ -34,11 +36,13 @@ const sponsors = {
         { name: "S S Infotech", src: SSInfotech },
         { name: "Balaji Bags", src: BalajiBags },
         { name: "Anantika Bag", src: Anantika },
-        { name: "House of Chaap", src: hoc },
         { name: "Akansha Jewellery", src: AkanshaJwellery },
+        { name: "Aaynaa Products", src: Aaynaa },
+        { name: "Aelin", src: aelin },
     ],
 
     foodSponsor: [
+        { name: "House of Chaap", src: hoc },
         { name: "Kwick Coffee", src: KwickCoffee },
         { name: "Hydrated Hub", src: Water },
         { name: "Shubi's Mocktail", src: shubis_mocktail },
@@ -96,7 +100,7 @@ export default function SponsorsPage() {
                 </p>
             </motion.div>
 
-            {renderSection("Powered by", sponsors.titleSponsor)}
+            {renderSection("Title Sponsor (Powered by)", sponsors.titleSponsor)}
             {renderSection("Style Partner", sponsors.stylePartner)}
             {renderSection("Education Partner", sponsors.educationPartner)}
             {renderSection("In Association With", sponsors.inAssociationWith)}

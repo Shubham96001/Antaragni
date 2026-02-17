@@ -20,7 +20,7 @@ export default function UdanPage() {
                         <div className="relative w-full h-full bg-gray-900 border-l-4 border-white/20 rounded-r-2xl rounded-l-sm shadow-2xl overflow-hidden transform transition-transform duration-500 group-hover:rotate-y-[-10deg] group-hover:scale-105 origin-left">
                             {/* Cover Image Placeholder */}
                             <img
-                                src="events/UDANCover.png"
+                                src="events/UDANCover.jpeg"
                                 alt="UDAN Magazine Cover"
                                 className="w-full h-full object-cover opacity-80"
                             />

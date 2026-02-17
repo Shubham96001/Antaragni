@@ -36,10 +36,10 @@ import sanjayDorle from "../../assets/sanjaydorle.jpeg";
 import atiyamadam from "../../assets/atiyamadam.jpeg"
 import umakantKadu from "../../assets/decorationLead.jpeg";
 import discipline from "../../assets/disciplineLead.jpeg";
-import shreyashraisoni from "../../assets/shreyasraisoni2.png"
-import ruchamam from "../../assets/ruchamam.jpeg"
-import sharaddhaumate from "../../assets/sharaddhaumate.jpeg"
-
+import shreyashraisoni from "../../assets/shreyasraisoni2.png";
+import ruchamam from "../../assets/ruchamam.jpeg";
+import sharaddhaumate from "../../assets/sharaddhaumate.jpeg";
+import socialMediaLead from "../../assets/socialMediaLead.jpeg";
 
 const teamSections = [
   {
@@ -186,7 +186,12 @@ const teamSections = [
         image: gymkhanaJointPresident1,
       },
       {
-        name: "Umakant  Kadu",
+        name: "Vrutant Ratnapure",
+        role: "Social Media Head",
+        image: socialMediaLead,
+      },
+      {
+        name: "Umakant Kadu",
         role: "Decoration Lead",
         image: umakantKadu,
       },
