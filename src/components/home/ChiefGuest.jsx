@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import chiefGuestImage from "../../assets/chief-guest-enhanced.png";
 
 export default function ChiefGuest() {
     return (
@@ -28,22 +29,26 @@ export default function ChiefGuest() {
                 <div className="relative aspect-square w-full overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
                     {/* Placeholder image - replace with actual image later */}
-                    <img
-                        src="https://avatar.iran.liara.run/public/boy?username=ChiefGuest"
+                    <Image
+                        src={chiefGuestImage}
                         alt="Chief Guest"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 object-top"
+                        fill
+                        quality={100}
+                        priority
+                        className="object-cover transition-transform duration-700 group-hover:scale-110 object-top"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </div>
 
                 <div className="p-8 flex flex-col justify-center bg-gradient-to-br from-white to-[var(--color-cream)] flex-grow">
                     <h3 className="font-bold mb-2 leading-tight text-3xl md:text-4xl text-[var(--color-primary)]">
-                        Chief Guest Name
+                        Mr. Rajesh Chitnis
                     </h3>
                     <p className="text-xl text-[var(--color-primary-light)] font-medium mb-4">
-                        Designation
+                        Actor , Artist & Content-Creator
                     </p>
                     <p className="text-gray-600 mb-6 leading-relaxed">
-                        Chief guest of event Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam deserunt accusantium nesciunt, ea a assumenda sed in rem tempore eum? Debitis autem veniam fugit pariatur!
+                        Mr. Rajesh Chitnis is a talented artist, accomplished actor, and creative content creator known for his dynamic presence and artistic excellence. He brings authenticity and passion to every performance and project he undertakes. Through his creative vision and engaging digital content, he continues to inspire and connect with diverse audiences.
                     </p>
                 </div>
             </motion.div>

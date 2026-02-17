@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, index }) {
     const [imageError, setImageError] = useState(false);
 
     return (
@@ -26,7 +26,7 @@ export default function EventCard({ event }) {
                             fill
                             className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            priority={false}
+                            priority={index < 6}
                             onError={() => setImageError(true)}
                         />
                     ) : (
