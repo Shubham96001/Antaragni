@@ -55,7 +55,7 @@ export default function UdanPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <a
-                            href="/events/UDAN2025-DxvGWi_G.pdf"
+                            href="/events/UdanMagazine2026.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg"
@@ -64,8 +64,8 @@ export default function UdanPage() {
                             Read Online
                         </a>
                         <a
-                            href="/events/UDAN2025-DxvGWi_G.pdf"
-                            download="UDAN_Magazine_2026.pdf"
+                            href="/events/UdanMagazine2026.pdf"
+                            download="UdanMagazine2026.pdf"
                             className="flex items-center justify-center gap-3 bg-gray-800 text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors shadow-lg"
                         >
                             <FaDownload />
