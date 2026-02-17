@@ -34,7 +34,7 @@ const sponsors = {
         { name: "S S Infotech", src: SSInfotech },
         { name: "Balaji Bags", src: BalajiBags },
         { name: "Anantika Bag", src: Anantika },
-        { name: "House of Chap", src: hoc },
+        { name: "House of Chaap", src: hoc },
         { name: "Akansha Jewellery", src: AkanshaJwellery },
     ],
 
