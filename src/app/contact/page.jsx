@@ -33,7 +33,7 @@ export default function ContactPage() {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -42,7 +42,7 @@ export default function ContactPage() {
                         className="
                 bg-white/80 backdrop-blur-lg
                 border border-purple-100
-                p-8 rounded-3xl
+                p-6 md:p-8 rounded-3xl
                 relative
                 shadow-xl
                 hover:shadow-[0_0_53px_rgba(199,125,255,0.4)]
