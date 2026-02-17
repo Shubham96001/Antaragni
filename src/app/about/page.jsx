@@ -206,7 +206,7 @@ const teamSections = [
     title: "WEB DEVELOPMENT INCHARGE",
     members: [
       {
-        name: "Prof. Atiya Khan",
+        name: "Dr. Atiya Khan",
         role: "Web Master",
         image: atiyamadam,
       },
