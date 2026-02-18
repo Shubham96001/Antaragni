@@ -17,7 +17,8 @@ import shubis_mocktail from "../../assets/shubis mocktail1.jpeg";
 import Aaynaa from "../../assets/Aaynaa.jpeg";
 import aelin from "../../assets/aelin.jpeg";
 import yamini_imitation_jewellry from "../../assets/yamini imitation jewellry.png";
-
+import BakkerBros from "../../assets/BakkerBros.jpeg"
+import burgerSingh from "../../assets/burgerSingh.jpeg"
 
 const sponsors = {
     titleSponsor: [
@@ -48,7 +49,9 @@ const sponsors = {
         { name: "House of Chaap", src: hoc },
         { name: "Kwick Coffee", src: KwickCoffee },
         { name: "Hydrated Hub", src: Water },
-        { name: "Shubi's Mocktail", src: shubis_mocktail },
+        { name: "Burger Singh", src: burgerSingh },
+        { name: "Bakker Bros", src:  BakkerBros},
+        
     ],
 };
 
