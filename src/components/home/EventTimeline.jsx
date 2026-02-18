@@ -18,6 +18,26 @@ export default function EventTimeline() {
         <section className="py-20 bg-[var(--color-cream)] relative min-h-screen">
             <div className="container mx-auto px-4">
 
+                {/* Invitation Section Added Here */}
+                <div className="text-center mb-16 bg-white rounded-3xl p-8 md:p-12 shadow-md border border-purple-100">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--color-primary)]">
+                        Official Invitation
+                    </h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg mb-6">
+                        We are delighted to invite you to be a part of this grand celebration. 
+                        Join us and witness unforgettable moments, vibrant performances, 
+                        and the spirit of excellence.
+                    </p>
+
+                    <Link 
+                        href="https://drive.google.com/file/d/1bZXG2HiWv8Ii-gzGQv4fNVeI_ttrw_LT/view?usp=drive_link" 
+                        target="_blank"
+                        className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-purple-800 to-fuchsia-800 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+                    >
+                        View Invitation
+                    </Link>
+                </div>
+
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="font-bold mb-4 px-4">
@@ -28,7 +48,7 @@ export default function EventTimeline() {
                     </p>
                 </div>
 
-                {/* Main Tabs (Parakram vs Antaragni) */}
+                {/* Main Tabs */}
                 <div className="flex flex-col sm:flex-row justify-center items-center mb-10 gap-4 px-4">
                     <button
                         onClick={() => { setActiveMainTab("parakram"); setActiveDayIndex(0); }}
@@ -116,7 +136,6 @@ function EventDetailCard({ name, details, color, idx }) {
             transition={{ delay: idx * 0.05 }}
             className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
         >
-            {/* Image Header */}
             <div className="h-32 bg-gray-200 relative overflow-hidden">
                 {image ? (
                     <div
@@ -132,7 +151,6 @@ function EventDetailCard({ name, details, color, idx }) {
                 </div>
             </div>
 
-            {/* Details Body */}
             <div className="p-4">
                 <div className="flex items-center gap-2 mb-2 text-gray-700 text-sm font-medium">
                     <span className="w-5 h-5 flex items-center justify-center bg-gray-100 rounded-full text-xs">🕒</span>

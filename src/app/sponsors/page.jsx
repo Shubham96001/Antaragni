@@ -14,6 +14,8 @@ import ISASIndia from "../../assets/ISASIndia.jpeg";
 import Water from "../../assets/water stall.jpeg";
 import JBEducation from "../../assets/JBEducation.png";
 import shubis_mocktail from "../../assets/shubis mocktail1.jpeg";
+import yamini_imitation_jewellry from "../../assets/yamini imitation jewellry.png";
+
 
 const sponsors = {
     titleSponsor: [
@@ -36,6 +38,7 @@ const sponsors = {
         { name: "Anantika Bag", src: Anantika },
         { name: "House of Chap", src: hoc },
         { name: "Akansha Jewellery", src: AkanshaJwellery },
+        { name: "Yamini Imitation Jewellry", src: yamini_imitation_jewellry },
     ],
 
     foodSponsor: [
@@ -95,7 +98,8 @@ export default function SponsorsPage() {
                     The pillars of strength behind the grand saga of Antaragni.
                 </p>
             </motion.div>
-
+            
+            
             {renderSection("Title Sponsor (Powered By)", sponsors.titleSponsor)}
             {renderSection("Style Partner", sponsors.stylePartner)}
             {renderSection("Education Partner", sponsors.educationPartner)}

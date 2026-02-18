@@ -341,6 +341,23 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        {/* Guest video Section */}
+        <div className="backdrop-blur-md mt-10 rounded-3xl p-8 md:p-12 border border-purple-200 bg-purple-50/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-shadow duration-300 hover:scale-102 transform">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[var(--color-primary)]">About Chief Guest</h2>
+              <p className="text-gray-700 text-lg leading-relaxed text-justify font-medium">
+                Mr. Rajesh Chitnis is a talented artist, accomplished actor, and creative content creator known for his dynamic presence and artistic excellence. He brings authenticity and passion to every performance and project he undertakes. Through his creative vision and engaging digital content, he continues to inspire and connect with diverse audiences.
+              </p>
+            </div>
+            <div className="md:w-1/2 w-full aspect-video rounded-xl overflow-hidden shadow-xl">
+              <video className="w-full h-full object-cover" controls playsInline>
+                <source src="/videos/Guestvideo.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
       </motion.section >
 
       {/* Team Section */}
