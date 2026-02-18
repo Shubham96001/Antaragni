@@ -72,7 +72,7 @@ export default function LivePage() {
 
                     <div className="flex justify-center">
                         <a
-                            href="https://www.youtube.com/@GHRCE_Nagpur"
+                            href="https://www.youtube.com/@GHRCENAGPUROfficial/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-[#FF0000] hover:bg-[#CC0000] text-white px-8 py-3 rounded-full font-bold transition-all flex items-center gap-3 shadow-lg hover:shadow-red-900/20"

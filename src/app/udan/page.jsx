@@ -6,8 +6,7 @@ import { FaDownload, FaBookOpen } from "react-icons/fa";
 export default function UdanPage() {
     return (
         <div className="min-h-screen w-full pt-20 pb-10 px-4 md:px-8 max-w-7xl mx-auto text-black bg-white">
-            <div className="flex flex-col md:flex-row items-center gap-12 mt-10">
-
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mt-10">
                 {/* Magazine Cover */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -15,12 +14,12 @@ export default function UdanPage() {
                     transition={{ duration: 0.8 }}
                     className="w-full md:w-1/2 flex justify-center"
                 >
-                    <div className="relative w-[300px] h-[420px] md:w-[400px] md:h-[560px] group perspective-1000">
+                    <div className="relative w-64 h-[358px] md:w-[400px] md:h-[560px] group perspective-1000">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-r-2xl rounded-l-md blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                         <div className="relative w-full h-full bg-gray-900 border-l-4 border-white/20 rounded-r-2xl rounded-l-sm shadow-2xl overflow-hidden transform transition-transform duration-500 group-hover:rotate-y-[-10deg] group-hover:scale-105 origin-left">
                             {/* Cover Image Placeholder */}
                             <img
-                                src="events/UDANCover.png"
+                                src="/events/UdanCover.jpeg"
                                 alt="UDAN Magazine Cover"
                                 className="w-full h-full object-cover opacity-80"
                             />

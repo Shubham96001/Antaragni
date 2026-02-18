@@ -14,8 +14,6 @@ import ISASIndia from "../../assets/ISASIndia.jpeg";
 import Water from "../../assets/water stall.jpeg";
 import JBEducation from "../../assets/JBEducation.png";
 import shubis_mocktail from "../../assets/shubis mocktail1.jpeg";
-import yamini_imitation_jewellry from "../../assets/yamini imitation jewellry.png";
-
 
 const sponsors = {
     titleSponsor: [
@@ -36,12 +34,11 @@ const sponsors = {
         { name: "S S Infotech", src: SSInfotech },
         { name: "Balaji Bags", src: BalajiBags },
         { name: "Anantika Bag", src: Anantika },
-        { name: "House of Chap", src: hoc },
         { name: "Akansha Jewellery", src: AkanshaJwellery },
-        { name: "Yamini Imitation Jewellry", src: yamini_imitation_jewellry },
     ],
 
     foodSponsor: [
+        { name: "House of Chaap", src: hoc },
         { name: "Kwick Coffee", src: KwickCoffee },
         { name: "Hydrated Hub", src: Water },
         { name: "Shubi's Mocktail", src: shubis_mocktail },
@@ -59,21 +56,21 @@ export default function SponsorsPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-20"
+            className="mb-12 md:mb-20"
         >
-            <h2 className="text-3xl md:text-4xl font-bold mb-10">{title}</h2>
-            <div className="flex flex-wrap gap-8 justify-center">
+            <h2 className="text-xl md:text-4xl font-bold mb-6 md:mb-10">{title}</h2>
+            <div className="flex flex-wrap gap-4 md:gap-8 justify-center">
                 {data.map((sponsor, idx) => (
                     <div
                         key={idx}
-                        className="flex flex-col items-center w-72 bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                        className="flex flex-col items-center w-36 md:w-72 bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-3 md:p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                     >
                         <img
                             src={sponsor.src?.src || sponsor.src}
                             alt={sponsor.name}
-                            className="w-60 h-40 object-contain rounded-lg mb-4 transition-all duration-500 bg-white"
+                            className="w-full h-20 md:h-40 object-contain rounded-lg mb-2 md:mb-4 transition-all duration-500 bg-white"
                         />
-                        <h3 className="text-xl font-bold text-center">
+                        <h3 className="text-xs md:text-xl font-bold text-center normal-case text-black tracking-normal">
                             {sponsor.name}
                         </h3>
                     </div>
@@ -91,20 +88,19 @@ export default function SponsorsPage() {
                 variants={fadeInUp}
                 className="mb-16"
             >
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-black">
+                <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-clip-text text-black">
                     Our Partners
                 </h1>
-                <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+                <p className="text-base md:text-xl text-gray-700 max-w-2xl mx-auto">
                     The pillars of strength behind the grand saga of Antaragni.
                 </p>
             </motion.div>
-            
-            
+
             {renderSection("Title Sponsor (Powered By)", sponsors.titleSponsor)}
             {renderSection("Style Partner", sponsors.stylePartner)}
             {renderSection("Education Partner", sponsors.educationPartner)}
             {renderSection("In Association With", sponsors.inAssociationWith)}
-            {renderSection("Food Sponsor", sponsors.foodSponsor)}
+            {renderSection("Food & Beverage Partners", sponsors.foodSponsor)}
         </div>
     );
 }
