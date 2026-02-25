@@ -22,12 +22,12 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Events", path: "/events" },
-        { name: "Gallery", path: "/gallery" },
-        { name: "Sponsors", path: "/sponsors" },
-        { name: "UDAAN Magazine", path: "/udan" },
-        { name: "Contact", path: "/contact" },
+        { name: "About", path: "/about/" },
+        { name: "Events", path: "/events/" },
+        { name: "Gallery", path: "/gallery/" },
+        { name: "Sponsors", path: "/sponsors/" },
+        { name: "UDAAN Magazine", path: "/udan/" },
+        { name: "Contact", path: "/contact/" },
     ];
 
     return (

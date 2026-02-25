@@ -52,20 +52,23 @@ export default function FlipBookViewer({ pdfUrl }) {
                 setIsMobile(mobile);
 
                 const availableWidth = containerRef.current.offsetWidth;
-                const availableHeight = window.innerHeight - 250; // More padding for controls
+                // Desktop needs more space for the fixed nav/toolbar (250px)
+                // Mobile needs less space to maximize the view (180px)
+                const availableHeight = window.innerHeight - (mobile ? 180 : 250);
 
                 if (!mobile) {
                     // Desktop: Two pages
-                    const maxWidth = availableWidth - 80;
-                    const bookWidth = Math.min(maxWidth, availableHeight * 1.414 * 2);
-                    setWidth(bookWidth / 2);
-                    setHeight((bookWidth / 2) * 1.414);
+                    const maxWidth = Math.min(availableWidth - 40, 1200); // Limit max width for luxury feel
+                    // For two pages: TotalWidth = Height * (2 / 1.414) = Height * 1.414 approximation
+                    const bookWidth = Math.min(maxWidth, availableHeight * 1.414);
+                    setWidth(Math.floor(bookWidth / 2));
+                    setHeight(Math.floor((bookWidth / 2) * 1.414));
                 } else {
                     // Mobile: Single page
-                    const maxWidth = availableWidth - 20;
+                    const maxWidth = availableWidth - 10;
                     const bookWidth = Math.min(maxWidth, availableHeight / 1.414);
-                    setWidth(bookWidth);
-                    setHeight(bookWidth * 1.414);
+                    setWidth(Math.floor(bookWidth));
+                    setHeight(Math.floor(bookWidth * 1.414));
                 }
             }
         };
@@ -101,45 +104,53 @@ export default function FlipBookViewer({ pdfUrl }) {
 
             <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess} loading={null}>
                 {numPages && (
-                    <HTMLFlipBook
-                        width={width}
-                        height={height}
-                        size="fixed"
-                        minWidth={width}
-                        maxWidth={width}
-                        minHeight={height}
-                        maxHeight={height}
-                        maxShadowOpacity={0.5}
-                        showCover={true}
-                        mobileScrollSupport={true}
-                        className="shadow-2xl"
-                        ref={flipBookRef}
-                        startPage={0}
-                        drawShadow={true}
-                        flippingTime={1000}
-                        usePortrait={window.innerWidth < 768}
-                        startZIndex={0}
-                        autoSize={true}
-                    >
-                        {pages}
-                    </HTMLFlipBook>
+                    <div className="flex justify-center items-center w-full">
+                        <HTMLFlipBook
+                            key={isMobile ? 'mobile-view' : 'desktop-view'}
+                            width={width}
+                            height={height}
+                            size="fixed"
+                            minWidth={width}
+                            maxWidth={width}
+                            minHeight={height}
+                            maxHeight={height}
+                            maxShadowOpacity={0.5}
+                            showCover={!isMobile}
+                            mobileScrollSupport={true}
+                            className="shadow-2xl mx-auto"
+                            ref={flipBookRef}
+                            startPage={0}
+                            drawShadow={true}
+                            flippingTime={1000}
+                            usePortrait={isMobile}
+                            startZIndex={0}
+                            autoSize={true}
+                            clickEventForward={true}
+                            useMouseEvents={true}
+                            swipeDistance={30}
+                            showPageCorners={true}
+                            disableFlipByClick={false}
+                        >
+                            {pages}
+                        </HTMLFlipBook>
+                    </div>
                 )}
             </Document>
 
             {numPages && (
-                <div className="mt-6 flex items-center gap-6">
+                <div className="mt-4 md:mt-6 flex items-center gap-4 md:gap-6">
                     <button
                         onClick={() => flipBookRef.current.pageFlip().flipPrev()}
-                        className="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full border border-white/20 transition-all font-bold backdrop-blur-sm"
+                        className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 md:px-6 md:py-2 rounded-full border border-white/20 transition-all font-bold backdrop-blur-sm text-sm md:text-base"
                     >
-                        Previous
+                        Prev
                     </button>
-                    <div className="text-white/60 font-medium text-sm">
-                        Pages {numPages}
+                    <div className="text-white/60 font-medium text-xs md:text-sm">
+                        Total {numPages}
                     </div>
                     <button
                         onClick={() => flipBookRef.current.pageFlip().flipNext()}
-                        className="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full border border-white/20 transition-all font-bold backdrop-blur-sm"
+                        className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 md:px-6 md:py-2 rounded-full border border-white/20 transition-all font-bold backdrop-blur-sm text-sm md:text-base"
                     >
                         Next
                     </button>

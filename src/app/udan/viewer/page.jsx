@@ -18,37 +18,37 @@ export default function UdanViewerPage() {
     return (
         <div className="min-h-screen bg-[#0f0f0f] flex flex-col pt-4">
             {/* Toolbar */}
-            <div className="px-4 md:px-8 py-4 flex items-center justify-between border-b border-white/10">
+            <div className="px-2 md:px-8 py-3 md:py-4 flex items-center justify-between border-b border-white/10">
                 <Link
-                    href="/udan"
-                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium"
+                    href="/udan/"
+                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium text-sm md:text-base"
                 >
                     <FaArrowLeft />
-                    <span>Back to UDAAN</span>
+                    <span className="hidden sm:inline">Back to UDAAN</span>
                 </Link>
 
-                <div className="text-white font-bold text-xl tracking-wider">
+                <div className="text-white font-bold text-lg md:text-xl tracking-wider">
                     UDAAN <span className="text-purple-500">2026</span>
                 </div>
 
                 <a
                     href="/events/UdanMagazine2026.pdf"
                     download
-                    className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-all text-sm font-bold"
+                    className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white p-2 md:px-4 md:py-2 rounded-lg transition-all text-xs md:text-sm font-bold"
                 >
-                    <FaDownload />
-                    <span className="hidden sm:inline">Download</span>
+                    <FaDownload size={16} />
+                    <span className="hidden md:inline">Download</span>
                 </a>
             </div>
 
             {/* Viewer Area */}
-            <div className="flex-grow relative overflow-hidden flex items-center justify-center p-4">
+            <div className="flex-grow relative overflow-hidden flex items-center justify-center p-2 md:p-4">
                 <FlipBookViewer pdfUrl="/events/UdanMagazine2026.pdf" />
             </div>
 
             {/* Hint */}
-            <div className="py-4 text-center text-white/40 text-xs">
-                Use your mouse or swipe to flip pages
+            <div className="py-2 text-center text-white/30 text-[10px] md:text-xs">
+                Swipe or click to flip pages
             </div>
         </div>
     );
