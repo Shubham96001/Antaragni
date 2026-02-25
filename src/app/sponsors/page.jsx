@@ -22,36 +22,36 @@ import burgerSingh from "../../assets/burgerSingh.jpeg"
 
 const sponsors = {
     titleSponsor: [
-        { name: "SHAH Overseas", src: ShahOverseas },
+        { name: "SHAH OVERSEAS", src: ShahOverseas },
     ],
 
     stylePartner: [
-        { name: "ISAS India", src: ISASIndia },
+        { name: "ISAS INDIA", src: ISASIndia },
     ],
 
     educationPartner: [
-        { name: "GeeBee Education", src: JBEducation },
+        { name: "GEEBEE EDUCATION", src: JBEducation },
     ],
 
     inAssociationWith: [
-        { name: "S V Solar", src: SVsolar },
+        { name: "S V SOLAR", src: SVsolar },
         { name: "JBL", src: JBL },
-        { name: "S S Infotech", src: SSInfotech },
-        { name: "Balaji Bags", src: BalajiBags },
-        { name: "Anantika Bag", src: Anantika },
-        { name: "Akansha Jewellery", src: AkanshaJwellery },
-        { name: "Aaynaa Products", src: Aaynaa },
-        { name: "Aelin", src: aelin },
-        { name: "Yamini Imitation Jewellry", src: yamini_imitation_jewellry },
+        { name: "S S INFOTECH", src: SSInfotech },
+        { name: "BALAJI BAGS", src: BalajiBags },
+        { name: "ANANTAKA BAG", src: Anantika },
+        { name: "AKANSHA JEWELLERY", src: AkanshaJwellery },
+        { name: "AAYNAA PRODUCTS", src: Aaynaa },
+        { name: "AELIN", src: aelin },
+        { name: "YAMINI IMITATION JEWELLRY", src: yamini_imitation_jewellry },
     ],
 
     foodSponsor: [
-        { name: "House of Chaap", src: hoc },
-        { name: "Kwick Coffee", src: KwickCoffee },
-        { name: "Hydrated Hub", src: Water },
-        { name: "Burger Singh", src: burgerSingh },
-        { name: "Bakker Bros", src:  BakkerBros},
-        
+        { name: "HOUSE OF CHAAP", src: hoc },
+        { name: "KWICK COFFEE", src: KwickCoffee },
+        { name: "HYDRATED HUB", src: Water },
+        { name: "BURGER SINGH", src: burgerSingh },
+        { name: "BAKKER BROS", src: BakkerBros },
+
     ],
 };
 
@@ -73,16 +73,16 @@ export default function SponsorsPage() {
                 {data.map((sponsor, idx) => (
                     <div
                         key={idx}
-                        className="flex flex-col items-center w-36 md:w-72 bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-3 md:p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                        className="flex flex-col items-center w-32 md:w-72 bg-gray-50 backdrop-blur-lg border border-orange-600/20 rounded-2xl p-2 md:p-6 hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                     >
                         <img
                             src={sponsor.src?.src || sponsor.src}
                             alt={sponsor.name}
-                            className="w-full h-20 md:h-40 object-contain rounded-lg mb-2 md:mb-4 transition-all duration-500 bg-white"
+                            className="w-full h-16 md:h-40 object-contain rounded-lg mb-2 md:mb-4 transition-all duration-500 bg-white"
                         />
-                        <h3 className="text-xs md:text-xl font-bold text-center normal-case text-black tracking-normal">
+                        <p className="text-[18px] md:text-lg font-bold text-center normal-case text-gray-900 tracking-tight leading-tight px-1 break-words w-full">
                             {sponsor.name}
-                        </h3>
+                        </p>
                     </div>
                 ))}
             </div>
@@ -105,8 +105,8 @@ export default function SponsorsPage() {
                     The pillars of strength behind the grand saga of Antaragni.
                 </p>
             </motion.div>
-            
-            
+
+
             {renderSection("Powered By", sponsors.titleSponsor)}
             {renderSection("Style Partner", sponsors.stylePartner)}
             {renderSection("Education Partner", sponsors.educationPartner)}

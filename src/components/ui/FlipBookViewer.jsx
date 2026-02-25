@@ -37,6 +37,7 @@ export default function FlipBookViewer({ pdfUrl }) {
     const [numPages, setNumPages] = useState(null);
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef(null);
     const flipBookRef = useRef(null);
 
@@ -47,19 +48,22 @@ export default function FlipBookViewer({ pdfUrl }) {
     useEffect(() => {
         const updateDimensions = () => {
             if (containerRef.current) {
+                const mobile = window.innerWidth <= 768;
+                setIsMobile(mobile);
+
                 const availableWidth = containerRef.current.offsetWidth;
-                const availableHeight = window.innerHeight - 200; // Account for toolbar and padding
+                const availableHeight = window.innerHeight - 250; // More padding for controls
 
-                let bookWidth, bookHeight;
-
-                if (window.innerWidth > 768) {
-                    // Desktop: Two pages visible
-                    bookWidth = Math.min(availableWidth - 80, availableHeight * 1.414);
+                if (!mobile) {
+                    // Desktop: Two pages
+                    const maxWidth = availableWidth - 80;
+                    const bookWidth = Math.min(maxWidth, availableHeight * 1.414 * 2);
                     setWidth(bookWidth / 2);
-                    setHeight(bookWidth / 2 * 1.414);
+                    setHeight((bookWidth / 2) * 1.414);
                 } else {
-                    // Mobile: Single page visible
-                    bookWidth = Math.min(availableWidth - 20, availableHeight / 1.414);
+                    // Mobile: Single page
+                    const maxWidth = availableWidth - 20;
+                    const bookWidth = Math.min(maxWidth, availableHeight / 1.414);
                     setWidth(bookWidth);
                     setHeight(bookWidth * 1.414);
                 }
@@ -67,8 +71,14 @@ export default function FlipBookViewer({ pdfUrl }) {
         };
 
         updateDimensions();
+        // Use a small delay to ensure container dimensions are accurate
+        const timer = setTimeout(updateDimensions, 100);
+
         window.addEventListener('resize', updateDimensions);
-        return () => window.removeEventListener('resize', updateDimensions);
+        return () => {
+            window.removeEventListener('resize', updateDimensions);
+            clearTimeout(timer);
+        };
     }, []);
 
     const pages = [];

@@ -37,7 +37,7 @@ export default function LiveEventFeature({ compact = false }) {
                 className={`grid ${compact ? 'grid-cols-1' : 'md:grid-cols-2'} gap-0 bg-white rounded-3xl overflow-hidden shadow-2xl border border-[var(--color-primary)]/20 group h-full`}
             >
                 {/* Image Section */}
-                <div className={`relative ${compact ? 'aspect-video md:aspect-square w-full' : 'h-64 md:h-auto'} overflow-hidden`}>
+                <div className={`relative ${compact ? 'aspect-video w-full' : 'aspect-video md:aspect-auto md:h-full'} overflow-hidden`}>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
                     <img
                         src={bannerImage || "/events/tech.png"}
