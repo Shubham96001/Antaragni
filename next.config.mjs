@@ -4,6 +4,7 @@ const nextConfig = {
     trailingSlash: true,
     images: {
         unoptimized: true,
+        qualities: [75, 100],
         remotePatterns: [
             {
                 protocol: "https",
