@@ -19,7 +19,7 @@ export default function UdanPage() {
                         <div className="relative w-full h-full bg-gray-900 border-l-4 border-white/20 rounded-r-2xl rounded-l-sm shadow-2xl overflow-hidden transform transition-transform duration-500 group-hover:rotate-y-[-10deg] group-hover:scale-105 origin-left">
                             {/* Cover Image Placeholder */}
                             <img
-                                src="/events/UdanCover.jpeg"
+                                src="/events/UDANCover.jpeg"
                                 alt="UDAN Magazine Cover"
                                 className="w-full h-full object-cover opacity-80"
                             />
@@ -49,12 +49,12 @@ export default function UdanPage() {
                     </h2>
 
                     <p className="text-gray-700 text-lg leading-relaxed">
-                        **UDAN** is the literary heartbeat of Antaragni. It captures the essence of the festival, featuring student artwork, poetry, technical articles, and behind-the-scenes stories of the Saga Spectrum.
+                        **UDAAN** is the literary heartbeat of Antaragni. It captures the essence of the festival, featuring student artwork, poetry, technical articles, and behind-the-scenes stories of the Saga Spectrum.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <a
-                            href="/events/UdanMagazine2026.pdf"
+                            href="/udan/viewer"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg"

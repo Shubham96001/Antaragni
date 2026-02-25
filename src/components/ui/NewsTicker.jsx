@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const newsItems = [
-    "🔴 LIVE NOW: Antaragni Main Stage - Click here to watch!",
-    "🚀 Welcome to the new official website of Antaragni 2026!",
-    "🏆 Antaragni & Technorion registration closing soon.",
-    "📢 Hackathon begins Feb 18th at the Library."
+    "✨ Antaragni 2026 has successfully concluded! Thank you for being part of the Saga Spectrum.",
+    "� Relive the memories - Check out the Gallery for event highlights!",
+    "📺 Watch event replays and highlights on our official YouTube channel @GHRCENAGPUROfficial.",
+    "� Heartfelt thanks to all our sponsors, participants, and volunteers!"
 ];
 
 export default function NewsTicker() {

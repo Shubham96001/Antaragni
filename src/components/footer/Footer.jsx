@@ -105,14 +105,14 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li className="pt-2">
-                                    <div className="bg-white rounded px-3 py-1 inline-flex items-center gap-2">
+                                <div className="bg-white rounded px-3 py-1 inline-flex items-center gap-2">
 
-                                      <img
+                                    <img
                                         src="https://hits.sh/src-ghrce.vercel.app.svg?style=flat-square&label=visits&color=000&labelColor=fff"
                                         alt="Visitor Counter"
-                                        />
-                                    </div>
-                                    </li>
+                                    />
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>

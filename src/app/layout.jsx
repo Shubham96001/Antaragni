@@ -21,7 +21,7 @@ const nunito = Nunito_Sans({
 export const metadata = {
     title: "Antaragni 2026 | GHRCEN",
     description: "Official website of Antaragni 2026, cultural festival of GHRCEN.",
-    metadataBase: new URL('https://antaragni.co.in/'), // Replace with your actual domain
+    metadataBase: new URL('https://antaragni.raisoni.net/'), // Replace with your actual domain
     keywords: ["Antaragni", "GHRCEN", "Cultural Festival", "Technorion", "Parakram", "Nagpur", "College Fest"],
     authors: [{ name: "GHRCEN" }],
     icons: {
@@ -31,7 +31,7 @@ export const metadata = {
     openGraph: {
         title: "Antaragni 2026 | GHRCEN",
         description: "Official website of Antaragni 2026, cultural festival of GHRCEN.",
-        url: "https://antaragni.co.in/",
+        url: "https://antaragni.raisoni.net/",
         siteName: "Antaragni 2026",
         images: [
             {

@@ -26,7 +26,7 @@ export default function Navbar() {
         { name: "Events", path: "/events" },
         { name: "Gallery", path: "/gallery" },
         { name: "Sponsors", path: "/sponsors" },
-        { name: "UDAN Magazine", path: "/udan" },
+        { name: "UDAAN Magazine", path: "/udan" },
         { name: "Contact", path: "/contact" },
     ];
 
