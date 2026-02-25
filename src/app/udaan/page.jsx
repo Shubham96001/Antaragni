@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaDownload, FaBookOpen } from "react-icons/fa";
 
-export default function UdanPage() {
+export default function UdaanPage() {
     return (
         <div className="min-h-screen w-full pt-20 pb-10 px-4 md:px-8 max-w-7xl mx-auto text-black bg-white">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mt-10">

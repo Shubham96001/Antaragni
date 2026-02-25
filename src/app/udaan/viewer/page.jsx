@@ -14,7 +14,7 @@ const FlipBookViewer = dynamic(() => import("@/components/ui/FlipBookViewer"), {
     ),
 });
 
-export default function UdanViewerPage() {
+export default function UdaanViewerPage() {
     return (
         <div className="min-h-screen bg-[#0f0f0f] flex flex-col pt-4">
             {/* Toolbar */}
