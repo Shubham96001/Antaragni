@@ -55,7 +55,7 @@ export default function UdanPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <Link
-                            href="/udan/viewer/"
+                            href="/udaan/viewer/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-3 bg-[#7B2CBF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#5A189A] transition-colors shadow-lg"
